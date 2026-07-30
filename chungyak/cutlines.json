@@ -1,0 +1,89 @@
+{
+  "asOf": "2026-07-31",
+  "cutlines": [
+    {
+      "region": "seoul",
+      "name": "강남권 인기 대단지",
+      "period": "2025 상반기",
+      "minCut": 72,
+      "maxCut": 79
+    },
+    {
+      "region": "seoul",
+      "name": "한강변 재개발 단지",
+      "period": "2025 상반기",
+      "minCut": 66,
+      "maxCut": 74
+    },
+    {
+      "region": "seoul",
+      "name": "동북권 역세권 단지",
+      "period": "2024 하반기",
+      "minCut": 60,
+      "maxCut": 69
+    },
+    {
+      "region": "seoul",
+      "name": "서남권 중형 단지",
+      "period": "2024 하반기",
+      "minCut": 55,
+      "maxCut": 64
+    },
+    {
+      "region": "metro",
+      "name": "과천·판교권 신축",
+      "period": "2025 상반기",
+      "minCut": 64,
+      "maxCut": 72
+    },
+    {
+      "region": "metro",
+      "name": "3기 신도시 본청약",
+      "period": "2025 상반기",
+      "minCut": 55,
+      "maxCut": 65
+    },
+    {
+      "region": "metro",
+      "name": "인천 검단·송도권",
+      "period": "2024 하반기",
+      "minCut": 45,
+      "maxCut": 58
+    },
+    {
+      "region": "metro",
+      "name": "경기 외곽 택지지구",
+      "period": "2024 하반기",
+      "minCut": 35,
+      "maxCut": 50
+    },
+    {
+      "region": "local",
+      "name": "부산 해운대권 신축",
+      "period": "2025 상반기",
+      "minCut": 52,
+      "maxCut": 63
+    },
+    {
+      "region": "local",
+      "name": "대전·청주 도심 단지",
+      "period": "2024 하반기",
+      "minCut": 40,
+      "maxCut": 55
+    },
+    {
+      "region": "local",
+      "name": "광주·대구 일반 단지",
+      "period": "2024 하반기",
+      "minCut": 30,
+      "maxCut": 46
+    },
+    {
+      "region": "local",
+      "name": "지방 중소도시 단지",
+      "period": "2024 하반기",
+      "minCut": 20,
+      "maxCut": 38
+    }
+  ]
+}
