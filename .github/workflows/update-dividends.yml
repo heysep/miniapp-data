@@ -1,0 +1,31 @@
+name: Update dividend data
+
+on:
+  schedule:
+    - cron: '20 0,6,12,18 * * *' # 하루 4회 (UTC)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Fetch latest dividend data
+        run: node dividend/update-dividends.mjs
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet -- dividend/dividends.json; then
+            echo "no changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dividend/dividends.json
+          git commit -m "data: dividends auto-update ($(date -u +%Y-%m-%dT%H:%M))"
+          git push

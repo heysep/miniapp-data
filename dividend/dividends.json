@@ -1,0 +1,678 @@
+{
+  "asOf": "2026-07-31",
+  "stocks": [
+    {
+      "code": "005930",
+      "name": "삼성전자",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#1428A0",
+      "logo": "삼",
+      "yieldPct": 0.7,
+      "nextExDate": "2026-06-29",
+      "nextPayDate": null,
+      "divRate": 1496
+    },
+    {
+      "code": "000660",
+      "name": "SK하이닉스",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#EC1C24",
+      "logo": "S",
+      "yieldPct": 0.2,
+      "nextExDate": "2026-05-28",
+      "nextPayDate": null,
+      "divRate": 3000
+    },
+    {
+      "code": "005380",
+      "name": "현대차",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#002C5F",
+      "logo": "현",
+      "yieldPct": 2.8,
+      "nextExDate": "2026-08-28",
+      "nextPayDate": null,
+      "divRate": 10000
+    },
+    {
+      "code": "105560",
+      "name": "KB금융",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#FFB300",
+      "logo": "K",
+      "yieldPct": 2.8,
+      "nextExDate": "2026-08-06",
+      "nextPayDate": null,
+      "divRate": 4620
+    },
+    {
+      "code": "055550",
+      "name": "신한지주",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#0046B8",
+      "logo": "신",
+      "yieldPct": 2.9,
+      "nextExDate": "2026-07-29",
+      "nextPayDate": null,
+      "divRate": 2960
+    },
+    {
+      "code": "086790",
+      "name": "하나금융지주",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#008C8C",
+      "logo": "하",
+      "yieldPct": 3.7,
+      "nextExDate": "2026-08-07",
+      "nextPayDate": null,
+      "divRate": 4620
+    },
+    {
+      "code": "316140",
+      "name": "우리금융지주",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#0067AC",
+      "logo": "우",
+      "yieldPct": 4.3,
+      "nextExDate": "2026-08-07",
+      "nextPayDate": null,
+      "divRate": 1400
+    },
+    {
+      "code": "017670",
+      "name": "SK텔레콤",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#EA002C",
+      "logo": "T",
+      "yieldPct": 4.3,
+      "nextExDate": "2026-08-28",
+      "nextPayDate": null,
+      "divRate": 3320
+    },
+    {
+      "code": "030200",
+      "name": "KT",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#E10500",
+      "logo": "K",
+      "yieldPct": 4.6,
+      "nextExDate": "2026-07-28",
+      "nextPayDate": null,
+      "divRate": 2400
+    },
+    {
+      "code": "033780",
+      "name": "KT&G",
+      "market": "KR",
+      "freq": "반기배당",
+      "exMonths": [
+        6,
+        12
+      ],
+      "color": "#00654E",
+      "logo": "K",
+      "yieldPct": 3.2,
+      "nextExDate": "2026-02-26",
+      "nextPayDate": null,
+      "divRate": 6000
+    },
+    {
+      "code": "015760",
+      "name": "한국전력",
+      "market": "KR",
+      "freq": "연배당",
+      "exMonths": [
+        12
+      ],
+      "color": "#E60012",
+      "logo": "한",
+      "yieldPct": 4.7,
+      "nextExDate": "2025-12-29",
+      "nextPayDate": null,
+      "divRate": 1542
+    },
+    {
+      "code": "005490",
+      "name": "POSCO홀딩스",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#2AA8E0",
+      "logo": "P",
+      "yieldPct": 3.2,
+      "nextExDate": "2026-05-26",
+      "nextPayDate": null,
+      "divRate": 9500
+    },
+    {
+      "code": "005830",
+      "name": "DB손해보험",
+      "market": "KR",
+      "freq": "연배당",
+      "exMonths": [
+        12
+      ],
+      "color": "#0A8246",
+      "logo": "D",
+      "yieldPct": 4.7,
+      "nextExDate": "2026-03-26",
+      "nextPayDate": null,
+      "divRate": 7600
+    },
+    {
+      "code": "139480",
+      "name": "이마트",
+      "market": "KR",
+      "freq": "연배당",
+      "exMonths": [
+        12
+      ],
+      "color": "#FFD400",
+      "logo": "이",
+      "yieldPct": 3.2,
+      "nextExDate": "2026-03-31",
+      "nextPayDate": null,
+      "divRate": 2500
+    },
+    {
+      "code": "000810",
+      "name": "삼성화재",
+      "market": "KR",
+      "freq": "연배당",
+      "exMonths": [
+        12
+      ],
+      "color": "#1F5FDB",
+      "logo": "삼",
+      "yieldPct": 3.2,
+      "nextExDate": "2026-03-26",
+      "nextPayDate": null,
+      "divRate": 19500
+    },
+    {
+      "code": "032830",
+      "name": "삼성생명",
+      "market": "KR",
+      "freq": "연배당",
+      "exMonths": [
+        12
+      ],
+      "color": "#0B72B8",
+      "logo": "삼",
+      "yieldPct": 2,
+      "nextExDate": "2025-12-29",
+      "nextPayDate": null,
+      "divRate": 5300
+    },
+    {
+      "code": "138040",
+      "name": "메리츠금융지주",
+      "market": "KR",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#B0323F",
+      "logo": "메",
+      "yieldPct": 1,
+      "nextExDate": "2025-02-27",
+      "nextPayDate": null,
+      "divRate": 1350
+    },
+    {
+      "code": "AAPL",
+      "name": "애플",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "color": "#111111",
+      "logo": "A",
+      "yieldPct": 0.3,
+      "nextExDate": "2026-05-11",
+      "nextPayDate": "2026-05-14",
+      "divRate": 1.08
+    },
+    {
+      "code": "MSFT",
+      "name": "마이크로소프트",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "color": "#00A4EF",
+      "logo": "M",
+      "yieldPct": 0.8,
+      "nextExDate": "2026-08-20",
+      "nextPayDate": "2026-09-10",
+      "divRate": 3.64
+    },
+    {
+      "code": "KO",
+      "name": "코카콜라",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#F40009",
+      "logo": "C",
+      "yieldPct": 2.4,
+      "nextExDate": "2026-09-15",
+      "nextPayDate": "2026-10-01",
+      "divRate": 2.12
+    },
+    {
+      "code": "PEP",
+      "name": "펩시코",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#004B93",
+      "logo": "P",
+      "yieldPct": 4.2,
+      "nextExDate": "2026-09-04",
+      "nextPayDate": "2026-09-30",
+      "divRate": 5.92
+    },
+    {
+      "code": "JNJ",
+      "name": "존슨앤드존슨",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "color": "#D51900",
+      "logo": "J",
+      "yieldPct": 2.1,
+      "nextExDate": "2026-08-25",
+      "nextPayDate": "2026-09-08",
+      "divRate": 5.36
+    },
+    {
+      "code": "PG",
+      "name": "P&G",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "color": "#003DA5",
+      "logo": "P",
+      "yieldPct": 3,
+      "nextExDate": "2026-07-24",
+      "nextPayDate": "2026-08-17",
+      "divRate": 4.35
+    },
+    {
+      "code": "XOM",
+      "name": "엑슨모빌",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "color": "#ED1C24",
+      "logo": "X",
+      "yieldPct": 2.6,
+      "nextExDate": "2026-05-15",
+      "nextPayDate": "2026-06-10",
+      "divRate": 4.12
+    },
+    {
+      "code": "CVX",
+      "name": "셰브론",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "color": "#0054A4",
+      "logo": "C",
+      "yieldPct": 3.7,
+      "nextExDate": "2026-05-19",
+      "nextPayDate": "2026-06-10",
+      "divRate": 7.12
+    },
+    {
+      "code": "JPM",
+      "name": "JP모건",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "color": "#5A6E8C",
+      "logo": "J",
+      "yieldPct": 1.7,
+      "nextExDate": "2026-07-06",
+      "nextPayDate": "2026-07-31",
+      "divRate": 6
+    },
+    {
+      "code": "O",
+      "name": "리얼티인컴",
+      "market": "US",
+      "freq": "월배당",
+      "exMonths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "color": "#0B3B60",
+      "logo": "O",
+      "yieldPct": 5.1,
+      "nextExDate": "2026-07-31",
+      "nextPayDate": "2026-08-14",
+      "divRate": 3.25
+    },
+    {
+      "code": "SCHD",
+      "name": "SCHD",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#5E2D91",
+      "logo": "S",
+      "yieldPct": 0,
+      "nextExDate": null,
+      "nextPayDate": null,
+      "divRate": 0
+    },
+    {
+      "code": "JEPI",
+      "name": "JEPI",
+      "market": "US",
+      "freq": "월배당",
+      "exMonths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "color": "#7A5C3E",
+      "logo": "J",
+      "yieldPct": 0,
+      "nextExDate": null,
+      "nextPayDate": null,
+      "divRate": 0
+    },
+    {
+      "code": "JEPQ",
+      "name": "JEPQ",
+      "market": "US",
+      "freq": "월배당",
+      "exMonths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "color": "#283593",
+      "logo": "J",
+      "yieldPct": 0,
+      "nextExDate": null,
+      "nextPayDate": null,
+      "divRate": 0
+    },
+    {
+      "code": "VZ",
+      "name": "버라이즌",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "color": "#CD040B",
+      "logo": "V",
+      "yieldPct": 6.1,
+      "nextExDate": "2026-07-10",
+      "nextPayDate": "2026-08-03",
+      "divRate": 2.83
+    },
+    {
+      "code": "T",
+      "name": "AT&T",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "color": "#00A8E0",
+      "logo": "A",
+      "yieldPct": 4.8,
+      "nextExDate": "2026-07-10",
+      "nextPayDate": "2026-08-03",
+      "divRate": 1.11
+    },
+    {
+      "code": "MO",
+      "name": "알트리아",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#B2292E",
+      "logo": "M",
+      "yieldPct": 6.2,
+      "nextExDate": "2026-06-15",
+      "nextPayDate": "2026-07-10",
+      "divRate": 4.24
+    },
+    {
+      "code": "ABBV",
+      "name": "애브비",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "color": "#071D49",
+      "logo": "A",
+      "yieldPct": 2.6,
+      "nextExDate": "2026-07-15",
+      "nextPayDate": "2026-08-14",
+      "divRate": 6.92
+    },
+    {
+      "code": "MCD",
+      "name": "맥도날드",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#DA291C",
+      "logo": "M",
+      "yieldPct": 2.8,
+      "nextExDate": "2026-09-01",
+      "nextPayDate": "2026-09-16",
+      "divRate": 7.44
+    },
+    {
+      "code": "HD",
+      "name": "홈디포",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#F96302",
+      "logo": "H",
+      "yieldPct": 2.8,
+      "nextExDate": "2026-06-04",
+      "nextPayDate": "2026-06-18",
+      "divRate": 9.32
+    },
+    {
+      "code": "AVGO",
+      "name": "브로드컴",
+      "market": "US",
+      "freq": "분기배당",
+      "exMonths": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "color": "#CC0000",
+      "logo": "브",
+      "yieldPct": 0.7,
+      "nextExDate": "2026-06-22",
+      "nextPayDate": "2026-06-30",
+      "divRate": 2.6
+    }
+  ]
+}
