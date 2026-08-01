@@ -251,7 +251,7 @@
       ],
       "color": "#2AA8E0",
       "logo": "P",
-      "yieldPct": 3.2,
+      "yieldPct": 3,
       "nextExDate": "2026-05-26",
       "nextPayDate": null,
       "divRate": 9500,
@@ -377,8 +377,8 @@
       "divRate": 1.08,
       "payoutRatioPct": 12,
       "fiveYearAvgYieldPct": 0.5,
-      "trailingYieldPct": 0.1,
-      "beta": null
+      "trailingYieldPct": 0.3,
+      "beta": 1.1
     },
     {
       "code": "MSFT",
@@ -420,7 +420,7 @@
       "nextPayDate": "2026-10-01",
       "divRate": 2.12,
       "payoutRatioPct": 62.5,
-      "fiveYearAvgYieldPct": 2.88,
+      "fiveYearAvgYieldPct": 2.87,
       "trailingYieldPct": 2.4,
       "beta": 0.35
     },
@@ -486,7 +486,7 @@
       "nextPayDate": "2026-08-17",
       "divRate": 4.35,
       "payoutRatioPct": 64.3,
-      "fiveYearAvgYieldPct": 2.48,
+      "fiveYearAvgYieldPct": 2.49,
       "trailingYieldPct": 3,
       "beta": 0.38
     },
@@ -525,13 +525,13 @@
       ],
       "color": "#0054A4",
       "logo": "C",
-      "yieldPct": 3.7,
-      "nextExDate": "2026-05-19",
+      "yieldPct": 3.6,
+      "nextExDate": "2026-08-19",
       "nextPayDate": "2026-06-10",
       "divRate": 7.12,
-      "payoutRatioPct": 120.4,
-      "fiveYearAvgYieldPct": 4.01,
-      "trailingYieldPct": 0,
+      "payoutRatioPct": 67.2,
+      "fiveYearAvgYieldPct": 3.99,
+      "trailingYieldPct": 1.8,
       "beta": 0.49
     },
     {
@@ -582,7 +582,7 @@
       "nextPayDate": "2026-08-14",
       "divRate": 3.25,
       "payoutRatioPct": 265,
-      "fiveYearAvgYieldPct": 5.06,
+      "fiveYearAvgYieldPct": 5.07,
       "trailingYieldPct": 5,
       "beta": 0.73
     },
@@ -708,7 +708,7 @@
       "nextPayDate": "2026-08-03",
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
-      "fiveYearAvgYieldPct": 6.26,
+      "fiveYearAvgYieldPct": 6.22,
       "trailingYieldPct": 4.8,
       "beta": 0.42
     },
@@ -747,13 +747,13 @@
       ],
       "color": "#071D49",
       "logo": "A",
-      "yieldPct": 2.7,
+      "yieldPct": 2.8,
       "nextExDate": "2026-07-15",
       "nextPayDate": "2026-08-14",
       "divRate": 6.92,
-      "payoutRatioPct": 326,
+      "payoutRatioPct": 189.9,
       "fiveYearAvgYieldPct": 3.6,
-      "trailingYieldPct": 0,
+      "trailingYieldPct": 1.3,
       "beta": 0.28
     },
     {
@@ -774,7 +774,7 @@
       "nextPayDate": "2026-09-16",
       "divRate": 7.44,
       "payoutRatioPct": 59.9,
-      "fiveYearAvgYieldPct": 2.22,
+      "fiveYearAvgYieldPct": 2.23,
       "trailingYieldPct": 2.7,
       "beta": 0.42
     },
