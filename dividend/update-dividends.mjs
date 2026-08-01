@@ -3,8 +3,10 @@
  * dividend/dividends.json 실데이터 갱신 스크립트 (Node 22+, 의존성 없음).
  *
  * Yahoo Finance quoteSummary(crumb 인증)에서 종목별로
- *  - summaryDetail   → 연 배당금(dividendRate)·배당수익률(dividendYield)·직전 배당락일
- *  - calendarEvents  → 다음 배당락일(exDividendDate)·지급일(dividendDate)
+ *  - summaryDetail        → 연 배당금(dividendRate)·배당수익률(dividendYield)·직전 배당락일
+ *                           + 배당성향(payoutRatio)·5년 평균 배당수익률·beta
+ *  - calendarEvents       → 다음 배당락일(exDividendDate)·지급일(dividendDate)
+ *  - defaultKeyStatistics → beta 보조 소스
  * 를 받아 병합한다. 실패 종목은 기존 값을 유지한다(데이터가 절대 비지 않음).
  *
  * GitHub Actions에서 매일 실행 → 변경 시 커밋 (.github/workflows/update-dividends.yml)
@@ -81,7 +83,7 @@ async function getSession() {
 }
 
 async function quoteSummary(session, symbol) {
-  const modules = 'summaryDetail,calendarEvents';
+  const modules = 'summaryDetail,calendarEvents,defaultKeyStatistics';
   const url = `https://query2.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(
     symbol
   )}?modules=${modules}&crumb=${encodeURIComponent(session.crumb)}`;
@@ -108,22 +110,49 @@ const num = (raw) => {
   return typeof n === 'number' && Number.isFinite(n) ? n : null;
 };
 
+/**
+ * Yahoo 필드 단위(2026-08 실측, .fmt로 확인):
+ *  - dividendYield / trailingAnnualDividendYield / payoutRatio → 소수 분수 (0.024 = 2.4%)
+ *  - fiveYearAvgDividendYield                                  → 이미 퍼센트 (2.88 = 2.88%)
+ *  - beta                                                      → 배수 그대로
+ * 저장은 전부 "퍼센트 숫자"로 통일한다(payoutRatioPct: 62.5, fiveYearAvgYieldPct: 2.88).
+ * 값이 없으면 null — 추정값을 넣지 않는다.
+ */
+const pct = (raw) => {
+  const n = num(raw);
+  return n == null ? null : Math.round(n * 1000) / 10;
+};
+const asIs1 = (raw) => {
+  const n = num(raw);
+  return n == null ? null : Math.round(n * 100) / 100;
+};
+
 function parseStock(meta, old, qs) {
   const sd = qs.summaryDetail ?? {};
   const ce = qs.calendarEvents ?? {};
+  const ks = qs.defaultKeyStatistics ?? {};
   const exDate = toDate(ce.exDividendDate) ?? toDate(sd.exDividendDate);
   const payDate = toDate(ce.dividendDate);
   const divRate = num(sd.dividendRate) ?? num(sd.trailingAnnualDividendRate);
   const y = num(sd.dividendYield) ?? num(sd.trailingAnnualDividendYield);
+  // 수집 실패 시 0으로 뭉개지 않는다 — null이어야 앱에서 "판단 불가"로 표시된다.
   const yieldPct = y != null ? Math.round(y * 1000) / 10 : (old?.yieldPct ?? null);
   if (exDate == null && divRate == null) return null; // 배당 정보가 전혀 없으면 실패 취급
+  const payoutRatioPct = pct(sd.payoutRatio);
+  const fiveYearAvgYieldPct = asIs1(sd.fiveYearAvgDividendYield);
+  const trailingYieldPct = pct(sd.trailingAnnualDividendYield);
+  const beta = asIs1(sd.beta) ?? asIs1(ks.beta);
   return {
     ...meta,
     symbol: undefined,
-    yieldPct: yieldPct ?? 0,
+    yieldPct,
     nextExDate: exDate ?? old?.nextExDate ?? null,
     nextPayDate: payDate ?? old?.nextPayDate ?? null,
     divRate: divRate ?? old?.divRate ?? null,
+    payoutRatioPct: payoutRatioPct ?? old?.payoutRatioPct ?? null,
+    fiveYearAvgYieldPct: fiveYearAvgYieldPct ?? old?.fiveYearAvgYieldPct ?? null,
+    trailingYieldPct: trailingYieldPct ?? old?.trailingYieldPct ?? null,
+    beta: beta ?? old?.beta ?? null,
   };
 }
 
@@ -149,7 +178,7 @@ async function main() {
       delete parsed.symbol;
       stocks.push(parsed);
       updated++;
-      console.log(`OK   ${meta.symbol.padEnd(10)} ex=${parsed.nextExDate} pay=${parsed.nextPayDate} rate=${parsed.divRate ?? '-'} yield=${parsed.yieldPct}%`);
+      console.log(`OK   ${meta.symbol.padEnd(10)} ex=${parsed.nextExDate} pay=${parsed.nextPayDate} rate=${parsed.divRate ?? '-'} yield=${parsed.yieldPct ?? '-'}% payout=${parsed.payoutRatioPct ?? '-'} avg5y=${parsed.fiveYearAvgYieldPct ?? '-'} beta=${parsed.beta ?? '-'}`);
     } else if (old) {
       stocks.push(old);
       console.log(`KEEP ${meta.symbol} (fetch 실패 — 기존 값 유지)`);
@@ -158,6 +187,10 @@ async function main() {
     }
     await sleep(400);
   }
+
+  const nulls = (f) => stocks.filter((s) => s[f] == null).length;
+  for (const f of ['yieldPct', 'payoutRatioPct', 'fiveYearAvgYieldPct', 'trailingYieldPct', 'beta'])
+    console.log(`null ${f}: ${nulls(f)}/${stocks.length}`);
 
   const out = { asOf: new Date().toISOString().slice(0, 10), stocks };
   writeFileSync(DATA_PATH, JSON.stringify(out, null, 2) + '\n', 'utf8');
