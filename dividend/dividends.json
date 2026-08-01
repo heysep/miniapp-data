@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-31",
+  "asOf": "2026-08-01",
   "stocks": [
     {
       "code": "005930",
@@ -14,7 +14,7 @@
       ],
       "color": "#1428A0",
       "logo": "삼",
-      "yieldPct": 0.7,
+      "yieldPct": 0.6,
       "nextExDate": "2026-06-29",
       "nextPayDate": null,
       "divRate": 1496
@@ -50,7 +50,7 @@
       ],
       "color": "#002C5F",
       "logo": "현",
-      "yieldPct": 2.8,
+      "yieldPct": 2.6,
       "nextExDate": "2026-08-28",
       "nextPayDate": null,
       "divRate": 10000
@@ -68,7 +68,7 @@
       ],
       "color": "#FFB300",
       "logo": "K",
-      "yieldPct": 2.8,
+      "yieldPct": 2.7,
       "nextExDate": "2026-08-06",
       "nextPayDate": null,
       "divRate": 4620
@@ -122,7 +122,7 @@
       ],
       "color": "#0067AC",
       "logo": "우",
-      "yieldPct": 4.3,
+      "yieldPct": 4.2,
       "nextExDate": "2026-08-07",
       "nextPayDate": null,
       "divRate": 1400
@@ -140,7 +140,7 @@
       ],
       "color": "#EA002C",
       "logo": "T",
-      "yieldPct": 4.3,
+      "yieldPct": 4.1,
       "nextExDate": "2026-08-28",
       "nextPayDate": null,
       "divRate": 3320
@@ -174,7 +174,7 @@
       ],
       "color": "#00654E",
       "logo": "K",
-      "yieldPct": 3.2,
+      "yieldPct": 3.4,
       "nextExDate": "2026-02-26",
       "nextPayDate": null,
       "divRate": 6000
@@ -189,7 +189,7 @@
       ],
       "color": "#E60012",
       "logo": "한",
-      "yieldPct": 4.7,
+      "yieldPct": 4.4,
       "nextExDate": "2025-12-29",
       "nextPayDate": null,
       "divRate": 1542
@@ -222,7 +222,7 @@
       ],
       "color": "#0A8246",
       "logo": "D",
-      "yieldPct": 4.7,
+      "yieldPct": 4.8,
       "nextExDate": "2026-03-26",
       "nextPayDate": null,
       "divRate": 7600
@@ -237,7 +237,7 @@
       ],
       "color": "#FFD400",
       "logo": "이",
-      "yieldPct": 3.2,
+      "yieldPct": 3.1,
       "nextExDate": "2026-03-31",
       "nextPayDate": null,
       "divRate": 2500
@@ -252,7 +252,7 @@
       ],
       "color": "#1F5FDB",
       "logo": "삼",
-      "yieldPct": 3.2,
+      "yieldPct": 3.1,
       "nextExDate": "2026-03-26",
       "nextPayDate": null,
       "divRate": 19500
@@ -267,7 +267,7 @@
       ],
       "color": "#0B72B8",
       "logo": "삼",
-      "yieldPct": 2,
+      "yieldPct": 1.7,
       "nextExDate": "2025-12-29",
       "nextPayDate": null,
       "divRate": 5300
@@ -304,7 +304,7 @@
       "color": "#111111",
       "logo": "A",
       "yieldPct": 0.3,
-      "nextExDate": "2026-05-11",
+      "nextExDate": "2026-08-10",
       "nextPayDate": "2026-05-14",
       "divRate": 1.08
     },
@@ -615,7 +615,7 @@
       ],
       "color": "#071D49",
       "logo": "A",
-      "yieldPct": 2.6,
+      "yieldPct": 2.7,
       "nextExDate": "2026-07-15",
       "nextPayDate": "2026-08-14",
       "divRate": 6.92
