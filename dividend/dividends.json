@@ -503,13 +503,13 @@
       ],
       "color": "#ED1C24",
       "logo": "X",
-      "yieldPct": 2.6,
+      "yieldPct": 2.7,
       "nextExDate": "2026-05-15",
       "nextPayDate": "2026-06-10",
       "divRate": 4.12,
       "payoutRatioPct": 68,
       "fiveYearAvgYieldPct": 3.7,
-      "trailingYieldPct": 0,
+      "trailingYieldPct": 2.6,
       "beta": 0.16
     },
     {
@@ -531,7 +531,7 @@
       "divRate": 7.12,
       "payoutRatioPct": 67.2,
       "fiveYearAvgYieldPct": 3.99,
-      "trailingYieldPct": 1.8,
+      "trailingYieldPct": 3.6,
       "beta": 0.49
     },
     {
