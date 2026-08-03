@@ -109,7 +109,7 @@
       "payoutRatioPct": 25.3,
       "fiveYearAvgYieldPct": 4.88,
       "trailingYieldPct": null,
-      "beta": 0.65
+      "beta": 0.64
     },
     {
       "code": "086790",
@@ -131,7 +131,7 @@
       "payoutRatioPct": 28.5,
       "fiveYearAvgYieldPct": 6.29,
       "trailingYieldPct": null,
-      "beta": 0.73
+      "beta": 0.7
     },
     {
       "code": "316140",
@@ -175,7 +175,7 @@
       "payoutRatioPct": 102.1,
       "fiveYearAvgYieldPct": 6.21,
       "trailingYieldPct": null,
-      "beta": 0.68
+      "beta": 0.69
     },
     {
       "code": "030200",
@@ -197,7 +197,7 @@
       "payoutRatioPct": 37.9,
       "fiveYearAvgYieldPct": 5.36,
       "trailingYieldPct": null,
-      "beta": 0.05
+      "beta": 0.09
     },
     {
       "code": "033780",
@@ -217,7 +217,7 @@
       "payoutRatioPct": 52.2,
       "fiveYearAvgYieldPct": 5.3,
       "trailingYieldPct": null,
-      "beta": 0.22
+      "beta": 0.2
     },
     {
       "code": "015760",
@@ -277,7 +277,7 @@
       "payoutRatioPct": 29,
       "fiveYearAvgYieldPct": 4.66,
       "trailingYieldPct": null,
-      "beta": 0.27
+      "beta": 0.25
     },
     {
       "code": "139480",
@@ -296,7 +296,7 @@
       "payoutRatioPct": 53.5,
       "fiveYearAvgYieldPct": 1.74,
       "trailingYieldPct": null,
-      "beta": 0.38
+      "beta": 0.43
     },
     {
       "code": "000810",
@@ -334,7 +334,7 @@
       "payoutRatioPct": 33.2,
       "fiveYearAvgYieldPct": 4,
       "trailingYieldPct": null,
-      "beta": 1.02
+      "beta": 1.06
     },
     {
       "code": "138040",
@@ -356,7 +356,7 @@
       "payoutRatioPct": 0,
       "fiveYearAvgYieldPct": 1.58,
       "trailingYieldPct": null,
-      "beta": 0.95
+      "beta": 1
     },
     {
       "code": "AAPL",
@@ -378,7 +378,7 @@
       "payoutRatioPct": 12,
       "fiveYearAvgYieldPct": 0.5,
       "trailingYieldPct": 0.3,
-      "beta": 1.1
+      "beta": 1.09
     },
     {
       "code": "MSFT",
@@ -400,7 +400,7 @@
       "payoutRatioPct": 19.8,
       "fiveYearAvgYieldPct": 0.79,
       "trailingYieldPct": 0.8,
-      "beta": 1.13
+      "beta": 1.1
     },
     {
       "code": "KO",
@@ -487,7 +487,7 @@
       "divRate": 4.35,
       "payoutRatioPct": 64.3,
       "fiveYearAvgYieldPct": 2.49,
-      "trailingYieldPct": 3,
+      "trailingYieldPct": 2.9,
       "beta": 0.38
     },
     {
@@ -531,7 +531,7 @@
       "divRate": 7.12,
       "payoutRatioPct": 67.2,
       "fiveYearAvgYieldPct": 3.99,
-      "trailingYieldPct": 3.6,
+      "trailingYieldPct": 3.5,
       "beta": 0.49
     },
     {
@@ -583,8 +583,8 @@
       "divRate": 3.25,
       "payoutRatioPct": 265,
       "fiveYearAvgYieldPct": 5.07,
-      "trailingYieldPct": 5,
-      "beta": 0.73
+      "trailingYieldPct": 5.1,
+      "beta": 0.72
     },
     {
       "code": "SCHD",
@@ -687,8 +687,8 @@
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.12,
-      "trailingYieldPct": 6.1,
-      "beta": 0.24
+      "trailingYieldPct": 6,
+      "beta": 0.23
     },
     {
       "code": "T",
