@@ -393,7 +393,7 @@
       ],
       "color": "#00A4EF",
       "logo": "M",
-      "yieldPct": 0.8,
+      "yieldPct": 0.7,
       "nextExDate": "2026-08-20",
       "nextPayDate": "2026-09-10",
       "divRate": 3.64,
@@ -443,7 +443,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 75.3,
       "fiveYearAvgYieldPct": 3.03,
-      "trailingYieldPct": 4.1,
+      "trailingYieldPct": 4.2,
       "beta": 0.36
     },
     {
@@ -509,7 +509,7 @@
       "divRate": 4.12,
       "payoutRatioPct": 68,
       "fiveYearAvgYieldPct": 3.7,
-      "trailingYieldPct": 2.7,
+      "trailingYieldPct": 2.6,
       "beta": 0.17
     },
     {
@@ -581,7 +581,7 @@
       "nextExDate": "2026-07-31",
       "nextPayDate": "2026-08-14",
       "divRate": 3.25,
-      "payoutRatioPct": 265,
+      "payoutRatioPct": 236.4,
       "fiveYearAvgYieldPct": 5.07,
       "trailingYieldPct": 0,
       "beta": 0.72
@@ -681,13 +681,13 @@
       ],
       "color": "#CD040B",
       "logo": "V",
-      "yieldPct": 6.1,
+      "yieldPct": 6,
       "nextExDate": "2026-07-10",
       "nextPayDate": "2026-08-03",
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.12,
-      "trailingYieldPct": 6,
+      "trailingYieldPct": 5.9,
       "beta": 0.23
     },
     {
@@ -703,13 +703,13 @@
       ],
       "color": "#00A8E0",
       "logo": "A",
-      "yieldPct": 4.8,
+      "yieldPct": 4.7,
       "nextExDate": "2026-07-10",
       "nextPayDate": "2026-08-03",
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
       "fiveYearAvgYieldPct": 6.22,
-      "trailingYieldPct": 4.8,
+      "trailingYieldPct": 4.7,
       "beta": 0.42
     },
     {
@@ -725,13 +725,13 @@
       ],
       "color": "#B2292E",
       "logo": "M",
-      "yieldPct": 6.2,
+      "yieldPct": 6.3,
       "nextExDate": "2026-06-15",
       "nextPayDate": "2026-07-10",
       "divRate": 4.24,
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.6,
-      "trailingYieldPct": 6.2,
+      "trailingYieldPct": 6.3,
       "beta": 0.5
     },
     {
@@ -791,7 +791,7 @@
       ],
       "color": "#F96302",
       "logo": "H",
-      "yieldPct": 2.6,
+      "yieldPct": 2.7,
       "nextExDate": "2026-06-04",
       "nextPayDate": "2026-06-18",
       "divRate": 9.32,
