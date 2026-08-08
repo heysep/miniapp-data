@@ -105,6 +105,8 @@ const toDate = (raw) => {
   if (typeof n !== 'number') return null;
   return new Date(n * 1000).toISOString().slice(0, 10);
 };
+/** 오늘 날짜(KST). 배당락일은 한국 거래일 기준이라 UTC로 자르면 하루가 밀린다. */
+const todayKST = () => new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
 const num = (raw) => {
   const n = typeof raw === 'number' ? raw : raw?.raw;
   return typeof n === 'number' && Number.isFinite(n) ? n : null;
@@ -133,6 +135,16 @@ function parseStock(meta, old, qs) {
   const ks = qs.defaultKeyStatistics ?? {};
   const exDate = toDate(ce.exDividendDate) ?? toDate(sd.exDividendDate);
   const payDate = toDate(ce.dividendDate);
+  // Yahoo의 exDividendDate는 국내 종목에서 "직전" 배당락일을 돌려주는 경우가 많다(실측 37종목 중 21개).
+  // 과거 날짜를 다음 일정이라고 단정하면 앱이 지난 날짜를 카운트다운한다.
+  // 그래서 미래 날짜일 때만 nextExDate로 채택하고(nextExDateConfirmed=true),
+  // 과거 날짜는 버리지 않고 lastExDate로 따로 남긴다 — 앱은 주기(exMonths)로 다음 회차를 추정해 '추정' 배지를 붙인다.
+  const today = todayKST();
+  const isFutureEx = exDate != null && exDate >= today;
+  // 기존 값도 과거면 그대로 물려받지 않는다 — 예전 실행이 남긴 과거 날짜가 계속 살아남는다.
+  const carriedEx = old?.nextExDate != null && old.nextExDate >= today ? old.nextExDate : null;
+  const nextExDate = isFutureEx ? exDate : carriedEx;
+  const lastExDate = !isFutureEx && exDate != null ? exDate : (old?.lastExDate ?? null);
   const divRate = num(sd.dividendRate) ?? num(sd.trailingAnnualDividendRate);
   const y = num(sd.dividendYield) ?? num(sd.trailingAnnualDividendYield);
   // 수집 실패 시 0으로 뭉개지 않는다 — null이어야 앱에서 "판단 불가"로 표시된다.
@@ -146,7 +158,9 @@ function parseStock(meta, old, qs) {
     ...meta,
     symbol: undefined,
     yieldPct,
-    nextExDate: exDate ?? old?.nextExDate ?? null,
+    nextExDate,
+    nextExDateConfirmed: isFutureEx,
+    lastExDate,
     nextPayDate: payDate ?? old?.nextPayDate ?? null,
     divRate: divRate ?? old?.divRate ?? null,
     payoutRatioPct: payoutRatioPct ?? old?.payoutRatioPct ?? null,
@@ -180,7 +194,13 @@ async function main() {
       updated++;
       console.log(`OK   ${meta.symbol.padEnd(10)} ex=${parsed.nextExDate} pay=${parsed.nextPayDate} rate=${parsed.divRate ?? '-'} yield=${parsed.yieldPct ?? '-'}% payout=${parsed.payoutRatioPct ?? '-'} avg5y=${parsed.fiveYearAvgYieldPct ?? '-'} beta=${parsed.beta ?? '-'}`);
     } else if (old) {
-      stocks.push(old);
+      // fetch 실패로 기존 값을 물려줄 때도 과거 배당락일은 그대로 두지 않는다(위와 같은 이유).
+      const stale = old.nextExDate != null && old.nextExDate < todayKST();
+      stocks.push(
+        stale
+          ? { ...old, nextExDate: null, nextExDateConfirmed: false, lastExDate: old.nextExDate }
+          : old
+      );
       console.log(`KEEP ${meta.symbol} (fetch 실패 — 기존 값 유지)`);
     } else {
       console.log(`SKIP ${meta.symbol} (데이터 없음)`);
@@ -192,7 +212,11 @@ async function main() {
   for (const f of ['yieldPct', 'payoutRatioPct', 'fiveYearAvgYieldPct', 'trailingYieldPct', 'beta'])
     console.log(`null ${f}: ${nulls(f)}/${stocks.length}`);
 
-  const out = { asOf: new Date().toISOString().slice(0, 10), stocks };
+  // asOf를 매번 오늘로 덮으면 워크플로의 `git diff --quiet` 가드가 항상 뚫려 내용이 같아도 매일 커밋된다.
+  // 그래서 stocks가 실제로 달라졌을 때만 갱신한다(배열 순서는 UNIVERSE 순서, 키 순서는 고정이라 문자열 비교로 충분).
+  const changed = JSON.stringify(stocks) !== JSON.stringify(prev.stocks ?? []);
+  const out = { asOf: changed ? todayKST() : (prev.asOf ?? todayKST()), stocks };
+  if (!changed) console.log('stocks 변화 없음 — asOf 유지');
   writeFileSync(DATA_PATH, JSON.stringify(out, null, 2) + '\n', 'utf8');
   console.log(`\ndividends.json 갱신 완료 — ${updated}/${UNIVERSE.length}종목, asOf=${out.asOf}`);
 }
