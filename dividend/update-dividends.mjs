@@ -9,6 +9,12 @@
  *  - defaultKeyStatistics → beta 보조 소스
  * 를 받아 병합한다. 실패 종목은 기존 값을 유지한다(데이터가 절대 비지 않음).
  *
+ * 추가로 chart API(range=5y&interval=1mo&events=div) 한 번으로
+ *  - divHistory   → 과거 5년 배당 지급 내역 (오래된 것부터)
+ *  - priceHistory → 월별 종가 (오래된 것부터)
+ * 를 붙인다. "과거에 샀으면 배당이 얼마나 늘었을까"를 앱에서 계산하려면 둘 다 필요하다.
+ * 이력 수집이 실패한 종목은 새 필드만 생략하고 넘어간다(전체 실행은 계속).
+ *
  * GitHub Actions에서 매일 실행 → 변경 시 커밋 (.github/workflows/update-dividends.yml)
  * 사용: node dividend/update-dividends.mjs
  */
@@ -97,6 +103,61 @@ async function quoteSummary(session, symbol) {
   }
 }
 
+/**
+ * chart API 한 번으로 배당 이력 + 월별 종가를 같이 받는다(요청 수를 늘리지 않으려고 한 번만 호출).
+ * 실패하면 null — 호출부에서 새 필드를 생략한다.
+ */
+async function chartHistory(session, symbol) {
+  const url = `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
+    symbol
+  )}?range=5y&interval=1mo&events=div&crumb=${encodeURIComponent(session.crumb)}`;
+  try {
+    const res = await fetch(url, { headers: { ...UA, cookie: session.cookie } });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json?.chart?.result?.[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/** epoch초 → 'YYYY-MM-DD' (UTC 기준. 배당락일·월봉 날짜는 Yahoo가 이미 거래일로 준다) */
+const epochDate = (sec) => new Date(sec * 1000).toISOString().slice(0, 10);
+
+/**
+ * 금액 자리수 — 파일을 앱이 통째로 받으므로 소수점을 최소로 줄인다.
+ * 원화는 정수(231000), 달러는 소수 둘째 자리(0.26 / 313.33)면 표시에 충분하다.
+ */
+const money = (n, market) =>
+  market === 'KR' ? Math.round(n) : Math.round(n * 100) / 100;
+
+function parseHistory(meta, chart) {
+  const divs = Object.values(chart?.events?.dividends ?? {})
+    .map((d) => (typeof d?.amount === 'number' && typeof d?.date === 'number'
+      ? { date: epochDate(d.date), amount: money(d.amount, meta.market) }
+      : null))
+    .filter(Boolean)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const ts = chart?.timestamp ?? [];
+  const closes = chart?.indicators?.quote?.[0]?.close ?? [];
+  // 월봉의 마지막 봉은 "이번 달 진행 중" 값이라 매일 바뀐다.
+  // 그대로 넣으면 asOf가 매일 갱신돼(내용이 늘 달라 보여서) 무의미 커밋이 다시 살아난다.
+  const thisMonth = todayKST().slice(0, 7);
+  const priceHistory = [];
+  for (let i = 0; i < ts.length; i++) {
+    const date = epochDate(ts[i]);
+    if (date.slice(0, 7) >= thisMonth) continue;
+    const c = closes[i];
+    if (typeof c !== 'number' || !Number.isFinite(c)) continue;
+    priceHistory.push({ date, close: money(c, meta.market) });
+  }
+  return {
+    divHistory: divs.length > 0 ? divs : null,
+    priceHistory: priceHistory.length > 0 ? priceHistory : null,
+  };
+}
+
 const toDate = (raw) => {
   // Yahoo는 fmt('2026-08-11') 또는 epoch초를 준다
   const fmt = raw?.fmt;
@@ -170,6 +231,35 @@ function parseStock(meta, old, qs) {
   };
 }
 
+/**
+ * 이력 배열만 한 줄로 압축해서 직렬화한다.
+ * JSON.stringify(…, 2)는 {date, amount} 하나를 네 줄로 펼쳐서 이력 한 점이 60바이트 가까이 된다.
+ * 앱이 매번 통째로 받는 파일이라 그대로 두면 크기가 두 배가 된다.
+ * 문서 전체를 정규식으로 건드리면 기존 필드까지 위험하니, 배열을 자리표시자로 바꿔 넣고
+ * 예쁘게 찍은 뒤 그 자리표시자만 압축 문자열로 되돌린다.
+ */
+function serialize(out) {
+  const compact = [];
+  const marked = {
+    ...out,
+    stocks: out.stocks.map((s) => {
+      const c = { ...s };
+      for (const f of ['divHistory', 'priceHistory']) {
+        if (Array.isArray(c[f])) {
+          c[f] = `@@H${compact.length}@@`;
+          compact.push(JSON.stringify(s[f]));
+        }
+      }
+      return c;
+    }),
+  };
+  let text = JSON.stringify(marked, null, 2);
+  compact.forEach((json, i) => {
+    text = text.replace(`"@@H${i}@@"`, json);
+  });
+  return text + '\n';
+}
+
 async function main() {
   let prev = { stocks: [] };
   try {
@@ -190,9 +280,16 @@ async function main() {
     const parsed = qs ? parseStock(meta, old, qs) : null;
     if (parsed) {
       delete parsed.symbol;
+      const chart = await chartHistory(session, meta.symbol);
+      const h = chart ? parseHistory(meta, chart) : { divHistory: null, priceHistory: null };
+      // 이력을 못 받으면 그 종목만 새 필드를 생략한다(기존 값이 있으면 물려받는다).
+      const divHistory = h.divHistory ?? old?.divHistory ?? null;
+      const priceHistory = h.priceHistory ?? old?.priceHistory ?? null;
+      if (divHistory) parsed.divHistory = divHistory;
+      if (priceHistory) parsed.priceHistory = priceHistory;
       stocks.push(parsed);
       updated++;
-      console.log(`OK   ${meta.symbol.padEnd(10)} ex=${parsed.nextExDate} pay=${parsed.nextPayDate} rate=${parsed.divRate ?? '-'} yield=${parsed.yieldPct ?? '-'}% payout=${parsed.payoutRatioPct ?? '-'} avg5y=${parsed.fiveYearAvgYieldPct ?? '-'} beta=${parsed.beta ?? '-'}`);
+      console.log(`OK   ${meta.symbol.padEnd(10)} div=${divHistory?.length ?? 0} px=${priceHistory?.length ?? 0} ex=${parsed.nextExDate} pay=${parsed.nextPayDate} rate=${parsed.divRate ?? '-'} yield=${parsed.yieldPct ?? '-'}% payout=${parsed.payoutRatioPct ?? '-'} avg5y=${parsed.fiveYearAvgYieldPct ?? '-'} beta=${parsed.beta ?? '-'}`);
     } else if (old) {
       // fetch 실패로 기존 값을 물려줄 때도 과거 배당락일은 그대로 두지 않는다(위와 같은 이유).
       const stale = old.nextExDate != null && old.nextExDate < todayKST();
@@ -205,7 +302,7 @@ async function main() {
     } else {
       console.log(`SKIP ${meta.symbol} (데이터 없음)`);
     }
-    await sleep(400);
+    await sleep(500);
   }
 
   const nulls = (f) => stocks.filter((s) => s[f] == null).length;
@@ -217,7 +314,7 @@ async function main() {
   const changed = JSON.stringify(stocks) !== JSON.stringify(prev.stocks ?? []);
   const out = { asOf: changed ? todayKST() : (prev.asOf ?? todayKST()), stocks };
   if (!changed) console.log('stocks 변화 없음 — asOf 유지');
-  writeFileSync(DATA_PATH, JSON.stringify(out, null, 2) + '\n', 'utf8');
+  writeFileSync(DATA_PATH, serialize(out), 'utf8');
   console.log(`\ndividends.json 갱신 완료 — ${updated}/${UNIVERSE.length}종목, asOf=${out.asOf}`);
 }
 
