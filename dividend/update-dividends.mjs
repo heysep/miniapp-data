@@ -12,8 +12,14 @@
  * 추가로 chart API(range=5y&interval=1mo&events=div) 한 번으로
  *  - divHistory   → 과거 5년 배당 지급 내역 (오래된 것부터)
  *  - priceHistory → 월별 종가 (오래된 것부터)
- * 를 붙인다. "과거에 샀으면 배당이 얼마나 늘었을까"를 앱에서 계산하려면 둘 다 필요하다.
- * 이력 수집이 실패한 종목은 새 필드만 생략하고 넘어간다(전체 실행은 계속).
+ * 를 받아 별도 파일 dividend/history.json에 쓴다.
+ * "과거에 샀으면 배당이 얼마나 늘었을까"를 앱에서 계산하려면 둘 다 필요하다.
+ *
+ * 파일을 나눈 이유: 이력을 dividends.json에 같이 넣으면 19KB → 126KB(6.5배)가 된다.
+ * 목록 화면은 이력이 필요 없는데 매번 6배를 받게 되므로,
+ * dividends.json은 목록용으로 가볍게 두고 이력은 종목 상세를 열 때만 받는다.
+ * 두 파일 다 내용이 실제로 바뀐 경우에만 asOf를 갱신한다.
+ * 이력 수집이 실패한 종목은 history.json에서만 빠진다(전체 실행은 계속).
  *
  * GitHub Actions에서 매일 실행 → 변경 시 커밋 (.github/workflows/update-dividends.yml)
  * 사용: node dividend/update-dividends.mjs
@@ -22,7 +28,9 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-const DATA_PATH = join(dirname(fileURLToPath(import.meta.url)), 'dividends.json');
+const DIR = dirname(fileURLToPath(import.meta.url));
+const DATA_PATH = join(DIR, 'dividends.json');
+const HIST_PATH = join(DIR, 'history.json');
 
 /** 유니버스 — 표시용 메타는 수동, 날짜·금액·수익률은 Yahoo에서 자동. */
 const UNIVERSE = [
@@ -238,21 +246,19 @@ function parseStock(meta, old, qs) {
  * 문서 전체를 정규식으로 건드리면 기존 필드까지 위험하니, 배열을 자리표시자로 바꿔 넣고
  * 예쁘게 찍은 뒤 그 자리표시자만 압축 문자열로 되돌린다.
  */
-function serialize(out) {
+function serializeHistory(out) {
   const compact = [];
-  const marked = {
-    ...out,
-    stocks: out.stocks.map((s) => {
-      const c = { ...s };
-      for (const f of ['divHistory', 'priceHistory']) {
-        if (Array.isArray(c[f])) {
-          c[f] = `@@H${compact.length}@@`;
-          compact.push(JSON.stringify(s[f]));
-        }
+  const marked = { ...out, stocks: {} };
+  for (const [code, h] of Object.entries(out.stocks)) {
+    const c = { ...h };
+    for (const f of ['divHistory', 'priceHistory']) {
+      if (Array.isArray(c[f])) {
+        c[f] = `@@H${compact.length}@@`;
+        compact.push(JSON.stringify(h[f]));
       }
-      return c;
-    }),
-  };
+    }
+    marked.stocks[code] = c;
+  }
   let text = JSON.stringify(marked, null, 2);
   compact.forEach((json, i) => {
     text = text.replace(`"@@H${i}@@"`, json);
@@ -269,13 +275,23 @@ async function main() {
   }
   const prevByCode = new Map((prev.stocks ?? []).map((s) => [s.code, s]));
 
+  let prevHist = { stocks: {} };
+  try {
+    prevHist = JSON.parse(readFileSync(HIST_PATH, 'utf8'));
+  } catch {
+    /* 최초 실행 */
+  }
+  const prevHistByCode = prevHist.stocks ?? {};
+
   const session = await getSession();
   console.log('yahoo session OK');
 
   const stocks = [];
+  const histOut = {};
   let updated = 0;
   for (const meta of UNIVERSE) {
     const old = prevByCode.get(meta.code);
+    const oldHist = prevHistByCode[meta.code];
     const qs = await quoteSummary(session, meta.symbol);
     const parsed = qs ? parseStock(meta, old, qs) : null;
     if (parsed) {
@@ -283,15 +299,20 @@ async function main() {
       const chart = await chartHistory(session, meta.symbol);
       const h = chart ? parseHistory(meta, chart) : { divHistory: null, priceHistory: null };
       // 이력을 못 받으면 그 종목만 새 필드를 생략한다(기존 값이 있으면 물려받는다).
-      const divHistory = h.divHistory ?? old?.divHistory ?? null;
-      const priceHistory = h.priceHistory ?? old?.priceHistory ?? null;
-      if (divHistory) parsed.divHistory = divHistory;
-      if (priceHistory) parsed.priceHistory = priceHistory;
+      const divHistory = h.divHistory ?? oldHist?.divHistory ?? null;
+      const priceHistory = h.priceHistory ?? oldHist?.priceHistory ?? null;
+      if (divHistory || priceHistory) {
+        histOut[meta.code] = {};
+        if (divHistory) histOut[meta.code].divHistory = divHistory;
+        if (priceHistory) histOut[meta.code].priceHistory = priceHistory;
+      }
       stocks.push(parsed);
       updated++;
       console.log(`OK   ${meta.symbol.padEnd(10)} div=${divHistory?.length ?? 0} px=${priceHistory?.length ?? 0} ex=${parsed.nextExDate} pay=${parsed.nextPayDate} rate=${parsed.divRate ?? '-'} yield=${parsed.yieldPct ?? '-'}% payout=${parsed.payoutRatioPct ?? '-'} avg5y=${parsed.fiveYearAvgYieldPct ?? '-'} beta=${parsed.beta ?? '-'}`);
     } else if (old) {
       // fetch 실패로 기존 값을 물려줄 때도 과거 배당락일은 그대로 두지 않는다(위와 같은 이유).
+      // 이력은 새로 못 받았다고 버리지 않는다 — 그대로 물려준다.
+      if (oldHist) histOut[meta.code] = oldHist;
       const stale = old.nextExDate != null && old.nextExDate < todayKST();
       stocks.push(
         stale
@@ -314,8 +335,18 @@ async function main() {
   const changed = JSON.stringify(stocks) !== JSON.stringify(prev.stocks ?? []);
   const out = { asOf: changed ? todayKST() : (prev.asOf ?? todayKST()), stocks };
   if (!changed) console.log('stocks 변화 없음 — asOf 유지');
-  writeFileSync(DATA_PATH, serialize(out), 'utf8');
+  writeFileSync(DATA_PATH, JSON.stringify(out, null, 2) + '\n', 'utf8');
   console.log(`\ndividends.json 갱신 완료 — ${updated}/${UNIVERSE.length}종목, asOf=${out.asOf}`);
+
+  // history.json도 같은 가드 — 이력은 대부분의 날에 그대로라 매번 asOf를 덮으면 무의미 커밋이 된다.
+  const histChanged = JSON.stringify(histOut) !== JSON.stringify(prevHistByCode);
+  const histFile = {
+    asOf: histChanged ? todayKST() : (prevHist.asOf ?? todayKST()),
+    stocks: histOut,
+  };
+  if (!histChanged) console.log('history 변화 없음 — asOf 유지');
+  writeFileSync(HIST_PATH, serializeHistory(histFile), 'utf8');
+  console.log(`history.json 갱신 완료 — ${Object.keys(histOut).length}종목, asOf=${histFile.asOf}`);
 }
 
 main().catch((e) => {

@@ -20,12 +20,12 @@ jobs:
         run: node dividend/update-dividends.mjs
       - name: Commit & push if changed
         run: |
-          if git diff --quiet -- dividend/dividends.json; then
+          if git diff --quiet -- dividend/dividends.json dividend/history.json; then
             echo "no changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dividend/dividends.json
+          git add dividend/dividends.json dividend/history.json
           git commit -m "data: dividends auto-update ($(date -u +%Y-%m-%dT%H:%M))"
           git push
