@@ -47,3 +47,15 @@ jobs:
           git add gongtam/seed.json
           git commit -m "data: gongtam auto-update ($(date -u +%Y-%m-%dT%H:%M))"
           git push
+
+      # 방금 갱신한 값으로 바로 판정한다. 임계값에 닿은 구독자에게만 나가고,
+      # 시크릿이 없으면 조용히 건너뛴다. 발송 실패가 수집을 되돌리지 않도록
+      # 커밋 뒤에 둔다.
+      - name: Dispatch threshold alerts
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TOSS_CERT: ${{ secrets.TOSS_CERT }}
+          TOSS_CERT_KEY: ${{ secrets.TOSS_CERT_KEY }}
+          PUSH_CODE: omok-jangin-alert
+        run: node gongtam/dispatch-alerts.mjs
