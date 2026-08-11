@@ -1,0 +1,49 @@
+name: Update gongtam data
+
+# 공탐지수 앱이 이 저장소의 raw 주소를 원격 피드로 읽는다.
+# 앱 저장소(비공개)의 collect와 같은 스크립트를 여기서 돌려 공개 피드를 만든다.
+on:
+  schedule:
+    - cron: '11 * * * *' # 매시간
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Collect gongtam indexes
+        run: node gongtam/collect.mjs > gongtam/seed.json
+
+      # 수집이 실패하면 seed.json이 비거나 깨진 채로 커밋될 수 있다.
+      # "성공했는데 데이터가 멈춰 있는" 사고를 막으려고 내용까지 검사한다.
+      - name: Validate result
+        run: |
+          node -e "
+          const d = require('./gongtam/seed.json');
+          for (const k of ['global','kospi','crypto']) {
+            const s = d[k];
+            if (!s || typeof s.now !== 'number' || s.now < 0 || s.now > 100) throw new Error(k + ' 현재값 이상: ' + JSON.stringify(s && s.now));
+            if (!Array.isArray(s.history) || s.history.length < 100) throw new Error(k + ' 시계열 부족: ' + (s.history || []).length);
+          }
+          const age = Math.floor(Date.now()/1000) - d.asOf;
+          if (age > 3600) throw new Error('asOf가 낡음: ' + age + '초');
+          console.log('검증 통과', d.global.now, d.kospi.now, d.crypto.now);
+          "
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet -- gongtam/seed.json; then
+            echo "no changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gongtam/seed.json
+          git commit -m "data: gongtam auto-update ($(date -u +%Y-%m-%dT%H:%M))"
+          git push
