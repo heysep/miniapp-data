@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-16",
+  "asOf": "2026-08-18",
   "stocks": [
     {
       "code": "005930",
@@ -533,7 +533,7 @@
       "divRate": 4.35,
       "payoutRatioPct": 64.3,
       "fiveYearAvgYieldPct": 2.49,
-      "trailingYieldPct": 3,
+      "trailingYieldPct": 2.9,
       "beta": 0.38
     },
     {
@@ -550,14 +550,14 @@
       "color": "#ED1C24",
       "logo": "X",
       "yieldPct": 2.6,
-      "nextExDate": "2026-08-17",
-      "nextExDateConfirmed": true,
-      "lastExDate": null,
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-08-17",
       "nextPayDate": "2026-09-10",
       "divRate": 4.12,
       "payoutRatioPct": 52.5,
       "fiveYearAvgYieldPct": 3.7,
-      "trailingYieldPct": 2.6,
+      "trailingYieldPct": 2.5,
       "beta": 0.17
     },
     {
@@ -637,7 +637,7 @@
       "divRate": 3.25,
       "payoutRatioPct": 236.4,
       "fiveYearAvgYieldPct": 5.07,
-      "trailingYieldPct": 5.1,
+      "trailingYieldPct": 5.2,
       "beta": 0.72
     },
     {
