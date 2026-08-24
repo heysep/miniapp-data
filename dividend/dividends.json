@@ -23,7 +23,7 @@
       "payoutRatioPct": 7.5,
       "fiveYearAvgYieldPct": 2.14,
       "trailingYieldPct": null,
-      "beta": 1.56
+      "beta": 1.55
     },
     {
       "code": "000660",
@@ -47,7 +47,7 @@
       "payoutRatioPct": 1.3,
       "fiveYearAvgYieldPct": 1.05,
       "trailingYieldPct": null,
-      "beta": 2.41
+      "beta": 2.4
     },
     {
       "code": "005380",
@@ -71,7 +71,7 @@
       "payoutRatioPct": 30.4,
       "fiveYearAvgYieldPct": 4.02,
       "trailingYieldPct": null,
-      "beta": 1.73
+      "beta": 1.72
     },
     {
       "code": "105560",
@@ -258,7 +258,7 @@
       "payoutRatioPct": 12.6,
       "fiveYearAvgYieldPct": 2.87,
       "trailingYieldPct": null,
-      "beta": 0.83
+      "beta": 0.82
     },
     {
       "code": "005490",
@@ -282,7 +282,7 @@
       "payoutRatioPct": 88.4,
       "fiveYearAvgYieldPct": 3.8,
       "trailingYieldPct": null,
-      "beta": 1.65
+      "beta": 1.64
     },
     {
       "code": "005830",
