@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-25",
+  "asOf": "2026-08-26",
   "stocks": [
     {
       "code": "005930",
@@ -437,7 +437,7 @@
       "divRate": 3.64,
       "payoutRatioPct": 19.8,
       "fiveYearAvgYieldPct": 0.79,
-      "trailingYieldPct": 0.8,
+      "trailingYieldPct": 0.7,
       "beta": 1.1
     },
     {
@@ -502,9 +502,9 @@
       "color": "#D51900",
       "logo": "J",
       "yieldPct": 2,
-      "nextExDate": "2026-08-25",
-      "nextExDateConfirmed": true,
-      "lastExDate": null,
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-08-25",
       "nextPayDate": "2026-09-08",
       "divRate": 5.36,
       "payoutRatioPct": 60.8,
@@ -637,7 +637,7 @@
       "divRate": 3.25,
       "payoutRatioPct": 236.4,
       "fiveYearAvgYieldPct": 5.07,
-      "trailingYieldPct": 5.2,
+      "trailingYieldPct": 5.1,
       "beta": 0.72
     },
     {
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.12,
-      "trailingYieldPct": 5.7,
+      "trailingYieldPct": 5.6,
       "beta": 0.23
     },
     {
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
       "fiveYearAvgYieldPct": 6.22,
-      "trailingYieldPct": 4.4,
+      "trailingYieldPct": 4.3,
       "beta": 0.42
     },
     {
@@ -797,7 +797,7 @@
       "divRate": 4.24,
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.6,
-      "trailingYieldPct": 6.4,
+      "trailingYieldPct": 6.2,
       "beta": 0.5
     },
     {
