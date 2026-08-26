@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-26",
+  "asOf": "2026-08-27",
   "stocks": [
     {
       "code": "005930",
@@ -581,7 +581,7 @@
       "divRate": 7.12,
       "payoutRatioPct": 67.2,
       "fiveYearAvgYieldPct": 3.99,
-      "trailingYieldPct": 3.4,
+      "trailingYieldPct": 3.5,
       "beta": 0.49
     },
     {
