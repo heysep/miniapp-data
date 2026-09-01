@@ -141,7 +141,7 @@
       "nextPayDate": null,
       "divRate": 4620,
       "payoutRatioPct": 29.1,
-      "fiveYearAvgYieldPct": 6.29,
+      "fiveYearAvgYieldPct": 6.27,
       "trailingYieldPct": null,
       "beta": 0.7
     },
@@ -182,14 +182,14 @@
       ],
       "color": "#EA002C",
       "logo": "T",
-      "yieldPct": 3.4,
+      "yieldPct": 3.5,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-28",
       "nextPayDate": null,
       "divRate": 3320,
       "payoutRatioPct": 48.6,
-      "fiveYearAvgYieldPct": 6.21,
+      "fiveYearAvgYieldPct": 6.19,
       "trailingYieldPct": null,
       "beta": 0.69
     },
@@ -235,7 +235,7 @@
       "nextPayDate": null,
       "divRate": 6600,
       "payoutRatioPct": 43.9,
-      "fiveYearAvgYieldPct": 5.3,
+      "fiveYearAvgYieldPct": 5.26,
       "trailingYieldPct": null,
       "beta": 0.2
     },
@@ -364,7 +364,7 @@
       "nextPayDate": null,
       "divRate": 5300,
       "payoutRatioPct": 34,
-      "fiveYearAvgYieldPct": 4,
+      "fiveYearAvgYieldPct": 3.97,
       "trailingYieldPct": null,
       "beta": 1.06
     },
@@ -460,7 +460,7 @@
       "nextPayDate": "2026-10-01",
       "divRate": 2.12,
       "payoutRatioPct": 62.5,
-      "fiveYearAvgYieldPct": 2.87,
+      "fiveYearAvgYieldPct": 2.86,
       "trailingYieldPct": 2.3,
       "beta": 0.34
     },
@@ -580,7 +580,7 @@
       "nextPayDate": "2026-09-10",
       "divRate": 7.12,
       "payoutRatioPct": 67.2,
-      "fiveYearAvgYieldPct": 3.99,
+      "fiveYearAvgYieldPct": 3.95,
       "trailingYieldPct": 3.4,
       "beta": 0.49
     },
@@ -796,7 +796,7 @@
       "nextPayDate": "2026-10-09",
       "divRate": 4.44,
       "payoutRatioPct": 89.3,
-      "fiveYearAvgYieldPct": 7.59,
+      "fiveYearAvgYieldPct": 7.6,
       "trailingYieldPct": 6.2,
       "beta": 0.5
     },
@@ -892,7 +892,7 @@
       "nextPayDate": "2026-06-30",
       "divRate": 2.6,
       "payoutRatioPct": 41.3,
-      "fiveYearAvgYieldPct": 1.8,
+      "fiveYearAvgYieldPct": 1.76,
       "trailingYieldPct": 0.7,
       "beta": 1.47
     }
