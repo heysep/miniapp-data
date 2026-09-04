@@ -71,7 +71,7 @@
       "payoutRatioPct": 32.3,
       "fiveYearAvgYieldPct": 4.03,
       "trailingYieldPct": null,
-      "beta": 1.73
+      "beta": 1.72
     },
     {
       "code": "105560",
@@ -282,7 +282,7 @@
       "payoutRatioPct": 52,
       "fiveYearAvgYieldPct": 3.78,
       "trailingYieldPct": null,
-      "beta": 1.64
+      "beta": 1.66
     },
     {
       "code": "005830",
@@ -438,7 +438,7 @@
       "payoutRatioPct": 19.8,
       "fiveYearAvgYieldPct": 0.79,
       "trailingYieldPct": 0.7,
-      "beta": 1.1
+      "beta": 1.11
     },
     {
       "code": "KO",
@@ -510,7 +510,7 @@
       "payoutRatioPct": 60.8,
       "fiveYearAvgYieldPct": 2.77,
       "trailingYieldPct": 1.9,
-      "beta": 0.24
+      "beta": 0.23
     },
     {
       "code": "PG",
@@ -558,7 +558,7 @@
       "payoutRatioPct": 52.5,
       "fiveYearAvgYieldPct": 3.7,
       "trailingYieldPct": 2.5,
-      "beta": 0.17
+      "beta": 0.18
     },
     {
       "code": "CVX",
@@ -573,12 +573,12 @@
       ],
       "color": "#0054A4",
       "logo": "C",
-      "yieldPct": 3.3,
+      "yieldPct": 3.4,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-19",
       "nextPayDate": "2026-09-10",
-      "divRate": 6.98,
+      "divRate": 7.12,
       "payoutRatioPct": 67.2,
       "fiveYearAvgYieldPct": 3.95,
       "trailingYieldPct": 3.3,
@@ -638,7 +638,7 @@
       "payoutRatioPct": 236.4,
       "fiveYearAvgYieldPct": 5.1,
       "trailingYieldPct": 5.2,
-      "beta": 0.72
+      "beta": 0.71
     },
     {
       "code": "SCHD",
@@ -798,7 +798,7 @@
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.59,
       "trailingYieldPct": 6.1,
-      "beta": 0.49
+      "beta": 0.5
     },
     {
       "code": "ABBV",
@@ -813,12 +813,12 @@
       ],
       "color": "#071D49",
       "logo": "A",
-      "yieldPct": 2.6,
+      "yieldPct": 2.7,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-07-15",
       "nextPayDate": "2026-08-14",
-      "divRate": 6.83,
+      "divRate": 6.92,
       "payoutRatioPct": 190.4,
       "fiveYearAvgYieldPct": 3.6,
       "trailingYieldPct": 2.6,
@@ -846,7 +846,7 @@
       "payoutRatioPct": 59.7,
       "fiveYearAvgYieldPct": 2.24,
       "trailingYieldPct": 2.8,
-      "beta": 0.41
+      "beta": 0.42
     },
     {
       "code": "HD",
