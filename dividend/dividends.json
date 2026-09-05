@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-05",
+  "asOf": "2026-09-06",
   "stocks": [
     {
       "code": "005930",
@@ -86,7 +86,7 @@
       ],
       "color": "#FFB300",
       "logo": "K",
-      "yieldPct": 2.7,
+      "yieldPct": 2.6,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-06",
@@ -273,7 +273,7 @@
       ],
       "color": "#2AA8E0",
       "logo": "P",
-      "yieldPct": 2.4,
+      "yieldPct": 2.3,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-21",
@@ -549,7 +549,7 @@
       ],
       "color": "#ED1C24",
       "logo": "X",
-      "yieldPct": 2.6,
+      "yieldPct": 2.5,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-17",
