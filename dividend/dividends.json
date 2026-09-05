@@ -71,7 +71,7 @@
       "payoutRatioPct": 32.3,
       "fiveYearAvgYieldPct": 4.03,
       "trailingYieldPct": null,
-      "beta": 1.72
+      "beta": 1.73
     },
     {
       "code": "105560",
@@ -110,7 +110,7 @@
       ],
       "color": "#0046B8",
       "logo": "신",
-      "yieldPct": 2.6,
+      "yieldPct": 2.7,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-07-29",
@@ -273,7 +273,7 @@
       ],
       "color": "#2AA8E0",
       "logo": "P",
-      "yieldPct": 2.3,
+      "yieldPct": 2.4,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-21",
@@ -294,7 +294,7 @@
       ],
       "color": "#0A8246",
       "logo": "D",
-      "yieldPct": 3.7,
+      "yieldPct": 3.9,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-03-26",
@@ -336,7 +336,7 @@
       ],
       "color": "#1F5FDB",
       "logo": "삼",
-      "yieldPct": 2.8,
+      "yieldPct": 2.9,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-03-26",
@@ -510,7 +510,7 @@
       "payoutRatioPct": 60.8,
       "fiveYearAvgYieldPct": 2.77,
       "trailingYieldPct": 1.9,
-      "beta": 0.23
+      "beta": 0.24
     },
     {
       "code": "PG",
@@ -798,7 +798,7 @@
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.59,
       "trailingYieldPct": 6.1,
-      "beta": 0.5
+      "beta": 0.49
     },
     {
       "code": "ABBV",
@@ -846,7 +846,7 @@
       "payoutRatioPct": 59.7,
       "fiveYearAvgYieldPct": 2.24,
       "trailingYieldPct": 2.8,
-      "beta": 0.42
+      "beta": 0.41
     },
     {
       "code": "HD",
