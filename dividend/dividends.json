@@ -119,7 +119,7 @@
       "payoutRatioPct": 25.3,
       "fiveYearAvgYieldPct": 4.85,
       "trailingYieldPct": null,
-      "beta": 0.64
+      "beta": 0.65
     },
     {
       "code": "086790",
@@ -303,7 +303,7 @@
       "payoutRatioPct": 25.7,
       "fiveYearAvgYieldPct": 4.66,
       "trailingYieldPct": null,
-      "beta": 0.25
+      "beta": 0.27
     },
     {
       "code": "139480",
@@ -390,7 +390,7 @@
       "payoutRatioPct": 0,
       "fiveYearAvgYieldPct": 1.58,
       "trailingYieldPct": null,
-      "beta": 1
+      "beta": 0.98
     },
     {
       "code": "AAPL",
@@ -549,7 +549,7 @@
       ],
       "color": "#ED1C24",
       "logo": "X",
-      "yieldPct": 2.5,
+      "yieldPct": 2.6,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-17",
