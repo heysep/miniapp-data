@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-06",
+  "asOf": "2026-09-07",
   "stocks": [
     {
       "code": "005930",
@@ -549,7 +549,7 @@
       ],
       "color": "#ED1C24",
       "logo": "X",
-      "yieldPct": 2.6,
+      "yieldPct": 2.5,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-17",
