@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-11",
+  "asOf": "2026-09-12",
   "stocks": [
     {
       "code": "005930",
@@ -629,7 +629,7 @@
       ],
       "color": "#0B3B60",
       "logo": "O",
-      "yieldPct": 5.5,
+      "yieldPct": 5.4,
       "nextExDate": "2026-09-30",
       "nextExDateConfirmed": true,
       "lastExDate": "2026-08-31",
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
       "fiveYearAvgYieldPct": 6.16,
-      "trailingYieldPct": 4.4,
+      "trailingYieldPct": 4.3,
       "beta": 0.43
     },
     {
