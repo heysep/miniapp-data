@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-15",
+  "asOf": "2026-09-16",
   "stocks": [
     {
       "code": "005930",
@@ -454,14 +454,14 @@
       "color": "#F40009",
       "logo": "C",
       "yieldPct": 2.4,
-      "nextExDate": "2026-09-15",
-      "nextExDateConfirmed": true,
-      "lastExDate": null,
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-09-15",
       "nextPayDate": "2026-10-01",
       "divRate": 2.12,
       "payoutRatioPct": 62.5,
       "fiveYearAvgYieldPct": 2.86,
-      "trailingYieldPct": 2.4,
+      "trailingYieldPct": 2.3,
       "beta": 0.34
     },
     {
@@ -637,7 +637,7 @@
       "divRate": 3.26,
       "payoutRatioPct": 236.4,
       "fiveYearAvgYieldPct": 5.1,
-      "trailingYieldPct": 5.4,
+      "trailingYieldPct": 5.5,
       "beta": 0.71
     },
     {
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.2,
-      "trailingYieldPct": 5.5,
+      "trailingYieldPct": 5.4,
       "beta": 0.24
     },
     {
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
       "fiveYearAvgYieldPct": 6.16,
-      "trailingYieldPct": 4.3,
+      "trailingYieldPct": 4.2,
       "beta": 0.43
     },
     {
@@ -790,9 +790,9 @@
       "color": "#B2292E",
       "logo": "M",
       "yieldPct": 6.3,
-      "nextExDate": "2026-09-15",
-      "nextExDateConfirmed": true,
-      "lastExDate": "2026-06-15",
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-09-15",
       "nextPayDate": "2026-10-09",
       "divRate": 4.44,
       "payoutRatioPct": 89.3,
@@ -821,7 +821,7 @@
       "divRate": 6.92,
       "payoutRatioPct": 190.4,
       "fiveYearAvgYieldPct": 3.52,
-      "trailingYieldPct": 2.7,
+      "trailingYieldPct": 2.6,
       "beta": 0.28
     },
     {
@@ -893,7 +893,7 @@
       "divRate": 2.6,
       "payoutRatioPct": 32.4,
       "fiveYearAvgYieldPct": 1.76,
-      "trailingYieldPct": 0.7,
+      "trailingYieldPct": 0.8,
       "beta": 1.46
     }
   ]
