@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-21",
+  "asOf": "2026-09-22",
   "stocks": [
     {
       "code": "005930",
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 75.3,
       "fiveYearAvgYieldPct": 3.03,
-      "trailingYieldPct": 4.3,
+      "trailingYieldPct": 4.4,
       "beta": 0.36
     },
     {
@@ -637,7 +637,7 @@
       "divRate": 3.26,
       "payoutRatioPct": 236.4,
       "fiveYearAvgYieldPct": 5.1,
-      "trailingYieldPct": 5.6,
+      "trailingYieldPct": 5.7,
       "beta": 0.71
     },
     {
@@ -886,9 +886,9 @@
       "color": "#CC0000",
       "logo": "브",
       "yieldPct": 0.7,
-      "nextExDate": "2026-09-21",
-      "nextExDateConfirmed": true,
-      "lastExDate": "2026-06-22",
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-09-21",
       "nextPayDate": "2026-09-30",
       "divRate": 2.6,
       "payoutRatioPct": 32.4,
