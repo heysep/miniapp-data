@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-25",
+  "asOf": "2026-09-26",
   "stocks": [
     {
       "code": "005930",
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 75.3,
       "fiveYearAvgYieldPct": 3.03,
-      "trailingYieldPct": 4.4,
+      "trailingYieldPct": 4.5,
       "beta": 0.36
     },
     {
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.2,
-      "trailingYieldPct": 6,
+      "trailingYieldPct": 5.9,
       "beta": 0.24
     },
     {
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.59,
-      "trailingYieldPct": 6.1,
+      "trailingYieldPct": 6.2,
       "beta": 0.49
     },
     {
