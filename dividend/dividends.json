@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-02",
+  "asOf": "2026-10-03",
   "stocks": [
     {
       "code": "005930",
@@ -182,7 +182,7 @@
       ],
       "color": "#EA002C",
       "logo": "T",
-      "yieldPct": 3.9,
+      "yieldPct": 3.8,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-28",
@@ -228,7 +228,7 @@
       ],
       "color": "#00654E",
       "logo": "K",
-      "yieldPct": 3.8,
+      "yieldPct": 3.7,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-20",
@@ -357,7 +357,7 @@
       ],
       "color": "#0B72B8",
       "logo": "삼",
-      "yieldPct": 1.9,
+      "yieldPct": 1.8,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2025-12-29",
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 75.3,
       "fiveYearAvgYieldPct": 3.14,
-      "trailingYieldPct": 4.5,
+      "trailingYieldPct": 4.6,
       "beta": 0.36
     },
     {
@@ -533,7 +533,7 @@
       "divRate": 4.35,
       "payoutRatioPct": 64.3,
       "fiveYearAvgYieldPct": 2.51,
-      "trailingYieldPct": 2.9,
+      "trailingYieldPct": 3,
       "beta": 0.38
     },
     {
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
       "fiveYearAvgYieldPct": 6.11,
-      "trailingYieldPct": 4.5,
+      "trailingYieldPct": 4.6,
       "beta": 0.43
     },
     {
@@ -893,7 +893,7 @@
       "divRate": 2.6,
       "payoutRatioPct": 32.4,
       "fiveYearAvgYieldPct": 1.72,
-      "trailingYieldPct": 0.7,
+      "trailingYieldPct": 0.8,
       "beta": 1.46
     }
   ]
