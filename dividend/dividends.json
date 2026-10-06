@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-06",
+  "asOf": "2026-10-07",
   "stocks": [
     {
       "code": "005930",
@@ -509,7 +509,7 @@
       "divRate": 5.36,
       "payoutRatioPct": 60.7,
       "fiveYearAvgYieldPct": 2.68,
-      "trailingYieldPct": 2,
+      "trailingYieldPct": 2.1,
       "beta": 0.21
     },
     {
@@ -598,9 +598,9 @@
       "color": "#5A6E8C",
       "logo": "J",
       "yieldPct": 2,
-      "nextExDate": "2026-10-06",
-      "nextExDateConfirmed": true,
-      "lastExDate": "2026-07-06",
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-10-06",
       "nextPayDate": "2026-10-31",
       "divRate": 6.6,
       "payoutRatioPct": 25.7,
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.43,
-      "trailingYieldPct": 6.3,
+      "trailingYieldPct": 6.2,
       "beta": 0.46
     },
     {
