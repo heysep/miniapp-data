@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-05",
+  "asOf": "2026-10-06",
   "stocks": [
     {
       "code": "005930",
@@ -484,7 +484,7 @@
       "nextPayDate": "2026-09-30",
       "divRate": 5.92,
       "payoutRatioPct": 75.3,
-      "fiveYearAvgYieldPct": 3.02,
+      "fiveYearAvgYieldPct": 3.03,
       "trailingYieldPct": 4.6,
       "beta": 0.36
     },
@@ -573,7 +573,7 @@
       ],
       "color": "#0054A4",
       "logo": "C",
-      "yieldPct": 3.4,
+      "yieldPct": 3.5,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-19",
@@ -629,7 +629,7 @@
       ],
       "color": "#0B3B60",
       "logo": "O",
-      "yieldPct": 6,
+      "yieldPct": 6.1,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-30",
@@ -789,7 +789,7 @@
       ],
       "color": "#B2292E",
       "logo": "M",
-      "yieldPct": 6.6,
+      "yieldPct": 6.5,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-15",
@@ -892,7 +892,7 @@
       "nextPayDate": "2026-09-30",
       "divRate": 2.6,
       "payoutRatioPct": 32.4,
-      "fiveYearAvgYieldPct": 1.27,
+      "fiveYearAvgYieldPct": 1.26,
       "trailingYieldPct": 0.7,
       "beta": 1.48
     }
