@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-17",
+  "asOf": "2026-10-19",
   "stocks": [
     {
       "code": "005930",
@@ -457,7 +457,7 @@
       "nextExDate": "2026-12-01",
       "nextExDateConfirmed": true,
       "lastExDate": "2026-09-15",
-      "nextPayDate": "2026-10-01",
+      "nextPayDate": "2026-12-15",
       "divRate": 2.12,
       "payoutRatioPct": 62.5,
       "fiveYearAvgYieldPct": 2.84,
