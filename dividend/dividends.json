@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 36.6,
       "fiveYearAvgYieldPct": 5.65,
-      "trailingYieldPct": 4.7,
+      "trailingYieldPct": 0,
       "beta": 0.44
     },
     {
