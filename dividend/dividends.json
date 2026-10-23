@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-23",
+  "asOf": "2026-10-24",
   "stocks": [
     {
       "code": "005930",
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 73,
       "fiveYearAvgYieldPct": 3.04,
-      "trailingYieldPct": 4.3,
+      "trailingYieldPct": 4.2,
       "beta": 0.36
     },
     {
@@ -526,14 +526,14 @@
       "color": "#003DA5",
       "logo": "P",
       "yieldPct": 2.6,
-      "nextExDate": "2026-10-23",
-      "nextExDateConfirmed": true,
-      "lastExDate": "2026-07-24",
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-10-23",
       "nextPayDate": "2026-11-16",
       "divRate": 4.35,
       "payoutRatioPct": 64.6,
       "fiveYearAvgYieldPct": 2.5,
-      "trailingYieldPct": 2.7,
+      "trailingYieldPct": 2.6,
       "beta": 0.38
     },
     {
@@ -637,7 +637,7 @@
       "divRate": 3.26,
       "payoutRatioPct": 234.7,
       "fiveYearAvgYieldPct": 5.05,
-      "trailingYieldPct": 5.8,
+      "trailingYieldPct": 5.7,
       "beta": 0.7
     },
     {
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.18,
-      "trailingYieldPct": 6.4,
+      "trailingYieldPct": 6.2,
       "beta": 0.25
     },
     {
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 59.4,
       "fiveYearAvgYieldPct": 5.65,
-      "trailingYieldPct": 5.1,
+      "trailingYieldPct": 4.9,
       "beta": 0.44
     },
     {
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 89.3,
       "fiveYearAvgYieldPct": 7.41,
-      "trailingYieldPct": 5.7,
+      "trailingYieldPct": 5.6,
       "beta": 0.46
     },
     {
@@ -845,7 +845,7 @@
       "divRate": 7.72,
       "payoutRatioPct": 59.7,
       "fiveYearAvgYieldPct": 2.25,
-      "trailingYieldPct": 3,
+      "trailingYieldPct": 2.9,
       "beta": 0.45
     },
     {
@@ -869,7 +869,7 @@
       "divRate": 9.32,
       "payoutRatioPct": 64.8,
       "fiveYearAvgYieldPct": 2.4,
-      "trailingYieldPct": 1.5,
+      "trailingYieldPct": 1.4,
       "beta": 1
     },
     {
