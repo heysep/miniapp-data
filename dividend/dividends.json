@@ -741,15 +741,15 @@
       ],
       "color": "#CD040B",
       "logo": "V",
-      "yieldPct": 6.3,
+      "yieldPct": 6.6,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-10-09",
       "nextPayDate": "2026-11-02",
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
-      "fiveYearAvgYieldPct": 6.18,
-      "trailingYieldPct": 0,
+      "fiveYearAvgYieldPct": 6.19,
+      "trailingYieldPct": 1.5,
       "beta": 0.25
     },
     {
