@@ -1,0 +1,38 @@
+# miniapp-data 저장소의 .github/workflows/update-lotto.yml 로 둔다.
+# 스크립트는 lotto/fetch-lotto.mjs (이 레포 data-pipeline/fetch-lotto.mjs 를 그대로 복사).
+# 추첨은 토요일 20:35 KST 전후. 동행복권 반영 시각이 일정하지 않고 당첨금 집계는 더 늦게 붙어서
+# 토 21:00 ~ 일 오전까지 여러 번 돈다. 내용이 같으면 스크립트가 파일을 안 건드려 커밋도 안 생긴다.
+# 응답 구조가 어긋나면 스크립트가 exit 1 — 파일은 그대로 남고 앱은 직전 데이터로 돈다.
+name: Update lotto data
+
+on:
+  schedule:
+    - cron: '10 12,13,14,15,18,21 * * 6' # 토 21:10 · 22:10 · 23:10 · 일 00:10 · 03:10 · 06:10 KST
+    - cron: '10 0,2 * * 0' # 일 09:10 · 11:10 KST
+    - cron: '10 0 * * 1' # 월 09:10 KST — 주말에 다 실패했을 때의 안전판
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Fetch latest lotto draws
+        run: node lotto/fetch-lotto.mjs
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet -- lotto/lotto.json && git ls-files --error-unmatch lotto/lotto.json >/dev/null 2>&1; then
+            echo "no changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lotto/lotto.json
+          git commit -m "data: lotto auto-update ($(date -u +%Y-%m-%dT%H:%M))"
+          git push
