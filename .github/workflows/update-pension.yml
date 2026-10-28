@@ -1,0 +1,44 @@
+# miniapp-data 저장소의 .github/workflows/update-pension.yml 로 둔다.
+# 스크립트는 pension720/fetch-pension.mjs (이 레포 data-pipeline/fetch-pension.mjs 를 그대로 복사).
+# 추첨은 목요일 저녁(19시대 KST). 동행복권 반영 시각이 일정하지 않아 목 19:40 ~ 금 오전까지 여러 번 돈다.
+# 내용이 같으면 스크립트가 파일을 안 건드려 커밋도 안 생긴다.
+# 응답 구조가 어긋나면 스크립트가 exit 1 — 파일은 그대로 남고 앱은 직전 데이터로 돈다.
+# cron 은 UTC 다. KST = UTC+9 라 금요일 새벽·오전 KST 는 UTC 로 목요일인 줄이 섞여 있다(주석의 KST 를 정본으로 본다).
+name: Update pension720 data
+
+on:
+  schedule:
+    - cron: '40 10 * * 4' # 목 19:40 KST
+    - cron: '10 11,12,13,14,15,18,22 * * 4' # 목 20:10 · 21:10 · 22:10 · 23:10 · 금 00:10 · 03:10 · 07:10 KST
+    - cron: '10 0,2 * * 5' # 금 09:10 · 11:10 KST
+    - cron: '10 0 * * 6' # 토 09:10 KST — 목·금에 다 실패했을 때의 안전판
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: miniapp-data-push
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Fetch latest pension720 draws
+        run: node pension720/fetch-pension.mjs
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet -- pension720/pension720.json && git ls-files --error-unmatch pension720/pension720.json >/dev/null 2>&1; then
+            echo "no changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pension720/pension720.json
+          git commit -m "data: pension720 auto-update ($(date -u +%Y-%m-%dT%H:%M))"
+          git push
