@@ -1,0 +1,42 @@
+# heysep/miniapp-data 의 .github/workflows/update-fx.yml 로 옮긴다.
+# 스크립트는 fx/fetch-fx.mjs 로 옮긴다(출력: fx/fx.json, 스크립트 옆).
+# 같은 레포의 update-gold.yml(:05·:45)과 push 가 겹칠 수 있어 push 전에 rebase 하고, 동시 실행은 그룹으로 막는다.
+# 20분 간격이면 고시회차가 바뀔 때마다 커밋이 생겨 평일 하루 최대 약 36개 커밋이 쌓인다.
+name: Update fx rates
+
+on:
+  schedule:
+    # 하나은행 고시 평일 09:00 KST 전후 ~ 저녁. 00:00~11:40 UTC = 09:00~20:40 KST, 20분 간격.
+    - cron: '10,30,50 0-11 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: miniapp-data-push
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Fetch latest fx rates
+        run: node fx/fetch-fx.mjs
+      - name: Commit & push if changed
+        run: |
+          # 첫 실행에는 fx.json 이 추적 전 파일이라 add 후 staged 기준으로 비교한다.
+          git add fx/fx.json
+          if git diff --cached --quiet -- fx/fx.json; then
+            echo "no changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: fx auto-update ($(date -u +%Y-%m-%dT%H:%M))"
+          git pull --rebase origin main
+          git push
