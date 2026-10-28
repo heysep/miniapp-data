@@ -116,7 +116,7 @@
       "lastExDate": "2026-07-29",
       "nextPayDate": null,
       "divRate": 2960,
-      "payoutRatioPct": 25.3,
+      "payoutRatioPct": 25.2,
       "fiveYearAvgYieldPct": 4.27,
       "trailingYieldPct": null,
       "beta": 0.67
@@ -549,7 +549,7 @@
       ],
       "color": "#ED1C24",
       "logo": "X",
-      "yieldPct": 2.2,
+      "yieldPct": 2.3,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-08-17",
@@ -741,7 +741,7 @@
       ],
       "color": "#CD040B",
       "logo": "V",
-      "yieldPct": 6.6,
+      "yieldPct": 6.4,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-10-09",
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 72.8,
       "fiveYearAvgYieldPct": 6.19,
-      "trailingYieldPct": 1.6,
+      "trailingYieldPct": 6.5,
       "beta": 0.25
     },
     {
