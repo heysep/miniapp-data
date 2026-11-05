@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-05",
+  "asOf": "2026-11-06",
   "stocks": [
     {
       "code": "005930",
@@ -182,16 +182,16 @@
       ],
       "color": "#EA002C",
       "logo": "T",
-      "yieldPct": 4.5,
+      "yieldPct": 4.3,
       "nextExDate": "2026-11-27",
       "nextExDateConfirmed": true,
       "lastExDate": "2026-08-28",
       "nextPayDate": null,
       "divRate": 3320,
       "payoutRatioPct": 48.6,
-      "fiveYearAvgYieldPct": 5.19,
+      "fiveYearAvgYieldPct": 5.18,
       "trailingYieldPct": null,
-      "beta": 0.78
+      "beta": 0.66
     },
     {
       "code": "030200",
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 73,
       "fiveYearAvgYieldPct": 3.05,
-      "trailingYieldPct": 4.2,
+      "trailingYieldPct": 4.1,
       "beta": 0.32
     },
     {
@@ -509,7 +509,7 @@
       "divRate": 5.36,
       "payoutRatioPct": 80.1,
       "fiveYearAvgYieldPct": 2.67,
-      "trailingYieldPct": 2,
+      "trailingYieldPct": 1.9,
       "beta": 0.2
     },
     {
@@ -557,7 +557,7 @@
       "divRate": 4.28,
       "payoutRatioPct": 42.4,
       "fiveYearAvgYieldPct": 3.35,
-      "trailingYieldPct": 2.3,
+      "trailingYieldPct": 2.4,
       "beta": 0.14
     },
     {
@@ -581,7 +581,7 @@
       "divRate": 7.12,
       "payoutRatioPct": 67.2,
       "fiveYearAvgYieldPct": 3.85,
-      "trailingYieldPct": 3.1,
+      "trailingYieldPct": 3.2,
       "beta": 0.45
     },
     {
@@ -605,7 +605,7 @@
       "divRate": 6.6,
       "payoutRatioPct": 25.8,
       "fiveYearAvgYieldPct": 2.24,
-      "trailingYieldPct": 1.8,
+      "trailingYieldPct": 1.7,
       "beta": 1.02
     },
     {
@@ -637,7 +637,7 @@
       "divRate": 3.26,
       "payoutRatioPct": 222.3,
       "fiveYearAvgYieldPct": 5.07,
-      "trailingYieldPct": 5.6,
+      "trailingYieldPct": 5.5,
       "beta": 0.65
     },
     {
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 71.8,
       "fiveYearAvgYieldPct": 6.2,
-      "trailingYieldPct": 6.2,
+      "trailingYieldPct": 6.1,
       "beta": 0.26
     },
     {
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 59.4,
       "fiveYearAvgYieldPct": 5.63,
-      "trailingYieldPct": 5.2,
+      "trailingYieldPct": 5.1,
       "beta": 0.49
     },
     {
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 88.4,
       "fiveYearAvgYieldPct": 7.39,
-      "trailingYieldPct": 5.6,
+      "trailingYieldPct": 5.5,
       "beta": 0.46
     },
     {
@@ -820,8 +820,8 @@
       "nextPayDate": "2027-02-16",
       "divRate": 6.92,
       "payoutRatioPct": 117.4,
-      "fiveYearAvgYieldPct": 3.41,
-      "trailingYieldPct": 2.4,
+      "fiveYearAvgYieldPct": 3.4,
+      "trailingYieldPct": 2.3,
       "beta": 0.19
     },
     {
@@ -837,7 +837,7 @@
       ],
       "color": "#DA291C",
       "logo": "M",
-      "yieldPct": 2.9,
+      "yieldPct": 2.8,
       "nextExDate": "2026-12-01",
       "nextExDateConfirmed": true,
       "lastExDate": "2026-09-01",
@@ -845,7 +845,7 @@
       "divRate": 7.72,
       "payoutRatioPct": 59.7,
       "fiveYearAvgYieldPct": 2.26,
-      "trailingYieldPct": 0,
+      "trailingYieldPct": 0.7,
       "beta": 0.43
     },
     {
@@ -869,7 +869,7 @@
       "divRate": 9.32,
       "payoutRatioPct": 64.8,
       "fiveYearAvgYieldPct": 2.41,
-      "trailingYieldPct": 1.4,
+      "trailingYieldPct": 1.3,
       "beta": 0.95
     },
     {
