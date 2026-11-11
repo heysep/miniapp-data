@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-11",
+  "asOf": "2026-11-12",
   "stocks": [
     {
       "code": "005930",
@@ -87,9 +87,9 @@
       "color": "#FFB300",
       "logo": "K",
       "yieldPct": 3.2,
-      "nextExDate": "2026-11-11",
-      "nextExDateConfirmed": true,
-      "lastExDate": "2026-08-06",
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-11-11",
       "nextPayDate": null,
       "divRate": 4833,
       "payoutRatioPct": 27.2,
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 73,
       "fiveYearAvgYieldPct": 3.05,
-      "trailingYieldPct": 4.1,
+      "trailingYieldPct": 4,
       "beta": 0.32
     },
     {
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 88.4,
       "fiveYearAvgYieldPct": 7.38,
-      "trailingYieldPct": 5.7,
+      "trailingYieldPct": 5.6,
       "beta": 0.46
     },
     {
