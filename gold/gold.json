@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-16T15:19:54+09:00",
+  "updatedAt": "2026-11-17T15:19:58+09:00",
   "source": "KRX 금시장 국내 금 1g (네이버 증권)",
-  "pricePerGram": 166100,
-  "prevClosePerGram": 168200,
+  "pricePerGram": 166860,
+  "prevClosePerGram": 166100,
   "history": [
     {
       "date": "2026-10-19",
@@ -87,6 +87,10 @@
     {
       "date": "2026-11-16",
       "pricePerGram": 166100
+    },
+    {
+      "date": "2026-11-17",
+      "pricePerGram": 166860
     }
   ]
 }
