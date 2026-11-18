@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-19",
   "stocks": [
     {
       "code": "005930",
@@ -235,7 +235,7 @@
       "nextPayDate": null,
       "divRate": 6600,
       "payoutRatioPct": 43.9,
-      "fiveYearAvgYieldPct": 4.77,
+      "fiveYearAvgYieldPct": 4.78,
       "trailingYieldPct": null,
       "beta": 0.14
     },
@@ -342,7 +342,7 @@
       "lastExDate": "2026-03-26",
       "nextPayDate": null,
       "divRate": 19500,
-      "payoutRatioPct": 40,
+      "payoutRatioPct": 38.6,
       "fiveYearAvgYieldPct": 4.68,
       "trailingYieldPct": null,
       "beta": 0.41
@@ -477,7 +477,7 @@
       ],
       "color": "#004B93",
       "logo": "P",
-      "yieldPct": 4,
+      "yieldPct": 4.2,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-04",
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 73,
       "fiveYearAvgYieldPct": 3.06,
-      "trailingYieldPct": 4,
+      "trailingYieldPct": 4.1,
       "beta": 0.32
     },
     {
@@ -574,14 +574,14 @@
       "color": "#0054A4",
       "logo": "C",
       "yieldPct": 3.3,
-      "nextExDate": "2026-11-18",
-      "nextExDateConfirmed": true,
-      "lastExDate": "2026-08-19",
+      "nextExDate": null,
+      "nextExDateConfirmed": false,
+      "lastExDate": "2026-11-18",
       "nextPayDate": "2026-12-10",
       "divRate": 7.12,
       "payoutRatioPct": 51.8,
       "fiveYearAvgYieldPct": 3.84,
-      "trailingYieldPct": 3.2,
+      "trailingYieldPct": 3.3,
       "beta": 0.45
     },
     {
@@ -605,7 +605,7 @@
       "divRate": 6.6,
       "payoutRatioPct": 25.8,
       "fiveYearAvgYieldPct": 2.24,
-      "trailingYieldPct": 1.8,
+      "trailingYieldPct": 1.9,
       "beta": 1.02
     },
     {
@@ -629,7 +629,7 @@
       ],
       "color": "#0B3B60",
       "logo": "O",
-      "yieldPct": 5.6,
+      "yieldPct": 5.7,
       "nextExDate": "2026-11-30",
       "nextExDateConfirmed": true,
       "lastExDate": "2026-10-30",
@@ -637,7 +637,7 @@
       "divRate": 3.29,
       "payoutRatioPct": 222.3,
       "fiveYearAvgYieldPct": 5.08,
-      "trailingYieldPct": 5.5,
+      "trailingYieldPct": 5.6,
       "beta": 0.65
     },
     {
@@ -741,7 +741,7 @@
       ],
       "color": "#CD040B",
       "logo": "V",
-      "yieldPct": 6.1,
+      "yieldPct": 6.2,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-10-09",
@@ -789,7 +789,7 @@
       ],
       "color": "#B2292E",
       "logo": "M",
-      "yieldPct": 5.6,
+      "yieldPct": 5.7,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-15",
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 88.4,
       "fiveYearAvgYieldPct": 7.37,
-      "trailingYieldPct": 5.4,
+      "trailingYieldPct": 5.5,
       "beta": 0.46
     },
     {
@@ -821,7 +821,7 @@
       "divRate": 6.92,
       "payoutRatioPct": 117.4,
       "fiveYearAvgYieldPct": 3.39,
-      "trailingYieldPct": 2.3,
+      "trailingYieldPct": 2.4,
       "beta": 0.19
     },
     {
@@ -861,7 +861,7 @@
       ],
       "color": "#F96302",
       "logo": "H",
-      "yieldPct": 2.7,
+      "yieldPct": 2.8,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-03",
@@ -869,7 +869,7 @@
       "divRate": 9.32,
       "payoutRatioPct": 64.8,
       "fiveYearAvgYieldPct": 2.42,
-      "trailingYieldPct": 1.3,
+      "trailingYieldPct": 0.7,
       "beta": 0.95
     },
     {
