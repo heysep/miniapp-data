@@ -412,7 +412,7 @@
       "nextPayDate": "2026-11-16",
       "divRate": 1.08,
       "payoutRatioPct": 11.8,
-      "fiveYearAvgYieldPct": 0.47,
+      "fiveYearAvgYieldPct": 0.46,
       "trailingYieldPct": 0.3,
       "beta": 1.09
     },
@@ -453,7 +453,7 @@
       ],
       "color": "#F40009",
       "logo": "C",
-      "yieldPct": 2.1,
+      "yieldPct": 2.2,
       "nextExDate": "2026-12-01",
       "nextExDateConfirmed": true,
       "lastExDate": "2026-09-15",
@@ -772,7 +772,7 @@
       "nextPayDate": "2026-11-02",
       "divRate": 1.11,
       "payoutRatioPct": 59.4,
-      "fiveYearAvgYieldPct": 5.62,
+      "fiveYearAvgYieldPct": 5.61,
       "trailingYieldPct": 5,
       "beta": 0.49
     },
@@ -796,7 +796,7 @@
       "nextPayDate": "2026-10-09",
       "divRate": 4.44,
       "payoutRatioPct": 88.4,
-      "fiveYearAvgYieldPct": 7.38,
+      "fiveYearAvgYieldPct": 7.37,
       "trailingYieldPct": 5.4,
       "beta": 0.46
     },
