@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-20",
+  "asOf": "2026-11-21",
   "stocks": [
     {
       "code": "005930",
@@ -342,7 +342,7 @@
       "lastExDate": "2026-03-26",
       "nextPayDate": null,
       "divRate": 19500,
-      "payoutRatioPct": 38.6,
+      "payoutRatioPct": 40,
       "fiveYearAvgYieldPct": 4.68,
       "trailingYieldPct": null,
       "beta": 0.41
@@ -461,7 +461,7 @@
       "divRate": 2.12,
       "payoutRatioPct": 62,
       "fiveYearAvgYieldPct": 2.82,
-      "trailingYieldPct": 2.1,
+      "trailingYieldPct": 2.2,
       "beta": 0.27
     },
     {
@@ -485,7 +485,7 @@
       "divRate": 5.92,
       "payoutRatioPct": 73,
       "fiveYearAvgYieldPct": 3.06,
-      "trailingYieldPct": 4.1,
+      "trailingYieldPct": 4.2,
       "beta": 0.32
     },
     {
@@ -509,7 +509,7 @@
       "divRate": 5.36,
       "payoutRatioPct": 80.1,
       "fiveYearAvgYieldPct": 2.66,
-      "trailingYieldPct": 1.9,
+      "trailingYieldPct": 2,
       "beta": 0.2
     },
     {
@@ -533,7 +533,7 @@
       "divRate": 4.35,
       "payoutRatioPct": 64.6,
       "fiveYearAvgYieldPct": 2.5,
-      "trailingYieldPct": 2.5,
+      "trailingYieldPct": 2.6,
       "beta": 0.36
     },
     {
@@ -597,7 +597,7 @@
       ],
       "color": "#5A6E8C",
       "logo": "J",
-      "yieldPct": 2,
+      "yieldPct": 2.1,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-10-06",
@@ -789,7 +789,7 @@
       ],
       "color": "#B2292E",
       "logo": "M",
-      "yieldPct": 5.8,
+      "yieldPct": 5.9,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-15",
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 88.4,
       "fiveYearAvgYieldPct": 7.37,
-      "trailingYieldPct": 5.6,
+      "trailingYieldPct": 5.7,
       "beta": 0.46
     },
     {
@@ -885,7 +885,7 @@
       ],
       "color": "#CC0000",
       "logo": "브",
-      "yieldPct": 0.7,
+      "yieldPct": 0.8,
       "nextExDate": null,
       "nextExDateConfirmed": false,
       "lastExDate": "2026-09-21",
@@ -893,7 +893,7 @@
       "divRate": 2.6,
       "payoutRatioPct": 32.4,
       "fiveYearAvgYieldPct": 1.23,
-      "trailingYieldPct": 0.7,
+      "trailingYieldPct": 0.8,
       "beta": 1.51
     }
   ]
