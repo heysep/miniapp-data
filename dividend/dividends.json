@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-25",
+  "asOf": "2026-11-26",
   "stocks": [
     {
       "code": "005930",
@@ -437,7 +437,7 @@
       "divRate": 3.92,
       "payoutRatioPct": 19,
       "fiveYearAvgYieldPct": 0.78,
-      "trailingYieldPct": 0.8,
+      "trailingYieldPct": 0.7,
       "beta": 1.05
     },
     {
@@ -509,7 +509,7 @@
       "divRate": 5.36,
       "payoutRatioPct": 80.1,
       "fiveYearAvgYieldPct": 2.66,
-      "trailingYieldPct": 2,
+      "trailingYieldPct": 1.9,
       "beta": 0.2
     },
     {
@@ -637,7 +637,7 @@
       "divRate": 3.29,
       "payoutRatioPct": 222.3,
       "fiveYearAvgYieldPct": 5.09,
-      "trailingYieldPct": 5.5,
+      "trailingYieldPct": 5.4,
       "beta": 0.65
     },
     {
@@ -749,7 +749,7 @@
       "divRate": 2.83,
       "payoutRatioPct": 71.8,
       "fiveYearAvgYieldPct": 6.22,
-      "trailingYieldPct": 6.1,
+      "trailingYieldPct": 6,
       "beta": 0.26
     },
     {
@@ -773,7 +773,7 @@
       "divRate": 1.11,
       "payoutRatioPct": 59.4,
       "fiveYearAvgYieldPct": 5.6,
-      "trailingYieldPct": 5,
+      "trailingYieldPct": 4.9,
       "beta": 0.49
     },
     {
@@ -797,7 +797,7 @@
       "divRate": 4.44,
       "payoutRatioPct": 88.4,
       "fiveYearAvgYieldPct": 7.36,
-      "trailingYieldPct": 5.8,
+      "trailingYieldPct": 5.7,
       "beta": 0.46
     },
     {
@@ -821,7 +821,7 @@
       "divRate": 6.92,
       "payoutRatioPct": 117.4,
       "fiveYearAvgYieldPct": 3.38,
-      "trailingYieldPct": 2.4,
+      "trailingYieldPct": 2.3,
       "beta": 0.19
     },
     {
@@ -893,7 +893,7 @@
       "divRate": 2.6,
       "payoutRatioPct": 32.4,
       "fiveYearAvgYieldPct": 1.22,
-      "trailingYieldPct": 0.8,
+      "trailingYieldPct": 0.9,
       "beta": 1.51
     }
   ]
